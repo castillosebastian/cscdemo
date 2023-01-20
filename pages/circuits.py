@@ -123,34 +123,7 @@ def fastest_lap(circuit_name):
 
 
 def layout():
-    return [
-        html.Div(
-            children=[
-                dbc.Card(
-                    [
-                        dbc.Card(
-                            [
-                                dbc.CardHeader("Most Wins:"),
-                                dbc.CardBody(children=[html.H6(id="winsCard")]),
-                            ]
-                        ),
-                        dbc.Card(
-                            [
-                                dbc.CardHeader("Most Pole Positions:"),
-                                dbc.CardBody(children=[html.H6(id="polesCard")]),
-                            ]
-                        ),
-                        dbc.Card(
-                            [
-                                dbc.CardHeader("Fastest Lap Record:"),
-                                dbc.CardBody(children=[html.H6(id="lapCard")]),
-                            ]
-                        ),
-                    ]
-                )
-            ],
-            style={"padding-left": "15px", "padding-right": "15px"},
-        ),
+    return [        
         dbc.Row(
             children=[
                 dbc.Col(
@@ -167,14 +140,12 @@ def layout():
                                         ],
                                         clearable=True,
                                         searchable=True,
-                                        value="Albert Park Grand Prix Circuit",
-                                        style={"width": "300px"},
+                                        value="Albert Park Grand Prix Circuit",                                        
                                     ),
                                     dcc.Loading(
                                         children=[
                                             html.P(
-                                                id="circuit-about-card",
-                                                style={"margin": "5 10px"},
+                                                id="circuit-about-card",                                               
                                             )
                                         ],
                                         type="circle",
@@ -194,7 +165,7 @@ def layout():
                                     html.Img(
                                         id="circuit-layout",
                                         # todo: find better way to size this
-                                        style={"height": "450px", "width": "700px"},
+                                        #style={"height": "450px", "width": "700px"},
                                     )
                                 ]
                             ),

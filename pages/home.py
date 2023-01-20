@@ -90,27 +90,7 @@ df_homepage_drivers = generate_recent_driver_standings()
 
 
 def layout():
-    return [        
-        #dbc.Col(
-        #    dbc.Card(
-        #        children=[                    
-        #            dbc.CardBody(
-        #                [
-        #                    dcc.Markdown(
-        #                        """
-        #                        Tablero de visualización de datos creado por Lic.Claudio Sebastián Castillo.
-        #                        """,
-        #                        style={
-        #                            "margin": "10px",
-        #                            "font-size": "20px",
-        #                        },
-        #                    )
-        #                ]
-        #            ),
-        #        ]
-        #    ),
-        #    width=12,
-        #),
+    return [    
         html.Div(
             children=[
                 dbc.Card(
@@ -127,22 +107,19 @@ def layout():
                                             ],
                                             data=df_homepage_drivers.to_dict("records"),
                                             page_current=0,
-                                            page_size=10,
+                                            style_data={
+                                                'color': 'black',
+                                                'backgroundColor': 'white'
+                                            },
+                                            style_data_conditional=[{
+                                                'if': {'row_index': 'odd'},
+                                                'backgroundColor': 'rgb(220, 220, 220)',
+                                                }],
                                             style_header={
-                                                "backgroundColor": "white",
-                                                "fontWeight": "bold",
+                                                'backgroundColor': 'rgb(210, 210, 210)',
+                                                'color': 'black',
+                                                'fontWeight': 'bold'
                                             },
-                                            style_cell={
-                                                "textAlign": "center",
-                                                "font-size": "10px",
-                                            },
-                                            style_cell_conditional=[
-                                                {
-                                                    "if": {"column_id": "Finished"},
-                                                    "textAlign": "center",
-                                                }
-                                            ],
-                                            style_as_list_view=True,
                                         )
                                     ]
                                 ),
@@ -162,18 +139,19 @@ def layout():
                                                 "records"
                                             ),
                                             page_current=0,
-                                            style_header={
-                                                "backgroundColor": "white",
-                                                "fontWeight": "bold",
+                                            style_data={
+                                                'color': 'black',
+                                                'backgroundColor': 'white'
                                             },
-                                            style_cell={"textAlign": "center"},
-                                            style_cell_conditional=[
-                                                {
-                                                    "if": {"column_id": "Finished"},
-                                                    "textAlign": "center",
-                                                }
-                                            ],
-                                            style_as_list_view=True,
+                                            style_data_conditional=[{
+                                                'if': {'row_index': 'odd'},
+                                                'backgroundColor': 'rgb(220, 220, 220)',
+                                                }],
+                                            style_header={
+                                                'backgroundColor': 'rgb(210, 210, 210)',
+                                                'color': 'black',
+                                                'fontWeight': 'bold'
+                                            },
                                         )
                                     ]
                                 ),
@@ -193,18 +171,19 @@ def layout():
                                                 "records"
                                             ),
                                             page_current=0,
-                                            style_header={
-                                                "backgroundColor": "white",
-                                                "fontWeight": "bold",
+                                            style_data={
+                                                'color': 'black',
+                                                'backgroundColor': 'white'
                                             },
-                                            style_cell={"textAlign": "center"},
-                                            style_cell_conditional=[
-                                                {
-                                                    "if": {"column_id": "Finished"},
-                                                    "textAlign": "center",
-                                                }
-                                            ],
-                                            style_as_list_view=True,
+                                            style_data_conditional=[{
+                                                'if': {'row_index': 'odd'},
+                                                'backgroundColor': 'rgb(220, 220, 220)',
+                                                }],
+                                            style_header={
+                                                'backgroundColor': 'rgb(210, 210, 210)',
+                                                'color': 'black',
+                                                'fontWeight': 'bold'
+                                            },
                                         )
                                     ]
                                 ),
@@ -212,8 +191,7 @@ def layout():
                         ),
                     ]
                 )
-            ],
-            style={"padding-left": "15px", "padding-right": "15px"},
+            ],            
         ),
     ]
 

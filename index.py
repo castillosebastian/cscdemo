@@ -22,8 +22,8 @@ SIDEBAR_STYLE = {
     "bottom": 0,
     "width": "150rem",
     "padding": "2rem 1rem",
-    "font-size": "0.8cm",
-    "background-color": "#878f99",
+    "font-size": "0.9cm",
+    #"background-color": "#878f99",
 }
 
 CONTENT_STYLE = {
@@ -44,17 +44,10 @@ app.layout = html.Div(
                         [
                             dbc.Col(
                                 html.Img(
-                                    src=app.get_asset_url("logo.png"), height="200px"
+                                    src=app.get_asset_url("logo_multiplo.png"), height="300px"
                                 )
-                            ),
-                            #dbc.Col(
-                            #    dbc.NavbarBrand(
-                            #        "CSC Analytics", className="ml-2"
-                            #    )
-                            #),
-                        ],
-                        #no_gutters=True,
-                        className="ml-auto flex-nowrap mt-3 mt-md-0",
+                            ),                            
+                        ],                  
                         align="center",
                     ),
                     href=app.get_relative_path("/"),
@@ -63,7 +56,7 @@ app.layout = html.Div(
                     children=[
                         dbc.NavLink("Home", href=app.get_relative_path("/"), active="exact", className='active-link'),
                         dbc.NavLink("Seasons", href=app.get_relative_path("/seasons"), active="exact", className='active-link'),
-                        dbc.NavLink("Drivers", href=app.get_relative_path("/drivers"), active="exact", className='active-link'),
+                        #dbc.NavLink("Drivers", href=app.get_relative_path("/drivers"), active="exact", className='active-link'),
                         dbc.NavLink(
                             "Constructors", href=app.get_relative_path("/constructors"), active="exact", className='active-link'
                         ),
@@ -71,7 +64,7 @@ app.layout = html.Div(
                             "Circuits", href=app.get_relative_path("/circuits"), active="exact", className='active-link'
                         ),
                     ],
-                    style=SIDEBAR_STYLE,
+                   style=SIDEBAR_STYLE,
                 ),
             ],
            style=CONTENT_STYLE

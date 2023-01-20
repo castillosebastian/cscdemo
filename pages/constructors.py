@@ -119,7 +119,7 @@ def layout():
                                     searchable=True,
                                     value=2020,
                                 ),
-                                html.Div(id="constructor-standings-card"),
+                                #html.Div(id="constructor-standings-card"),
                             ]
                         )
                     ),
@@ -133,7 +133,7 @@ def layout():
                                 dcc.Loading(
                                     children=[
                                         html.Div(
-                                            id="pie-graph", style={"width": "600px"}
+                                            id="pie-graph",
                                         )
                                     ],
                                     type="circle",

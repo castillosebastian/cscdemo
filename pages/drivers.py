@@ -245,13 +245,12 @@ def layout():
                     dbc.Card(
                         dbc.CardBody(
                             children=[
-                                dbc.CardHeader("# of Points After Each Race"),
+                                dbc.CardHeader("Points After Each Race"),
                                 dcc.Dropdown(id="year-dropdown-2"),
                                 dcc.Loading(
                                     children=[
                                         dcc.Graph(
-                                            id="season-line-graph",
-                                            style={"width": "720px"},
+                                            id="season-line-graph",                                            
                                         )
                                     ],
                                     type="circle",
@@ -260,7 +259,7 @@ def layout():
                         )
                     ),
                     width=8,
-                ),
+                ),                
             ]
         ),
         dbc.Row(
@@ -273,8 +272,7 @@ def layout():
                                 dcc.Loading(
                                     children=[
                                         html.P(
-                                            id="driver-about-card",
-                                            style={"margin": "5 10px"},
+                                            id="driver-about-card",                                            
                                         )
                                     ],
                                     type="circle",
@@ -282,18 +280,18 @@ def layout():
                             ]
                         )
                     ),
-                    width=5,
+                    width=4,
                 ),
                 dbc.Col(
                     dbc.Card(
                         dbc.CardBody(
                             children=[
                                 dbc.CardHeader("Individual Race Results"),
-                                html.Div(id="individual-result-table"),
+                                html.Div(id="individual-result-table"),                                
                             ]
                         )
                     ),
-                    width=7,
+                    width=8,
                 ),
             ]
         ),
@@ -306,7 +304,7 @@ def layout():
                                 children=[
                                     dbc.CardHeader("List of Race Wins"),
                                     html.Div(
-                                        id="wins-result-table", style={"width": "500px"}
+                                        id="wins-result-table", 
                                     ),
                                 ]
                             )
@@ -321,8 +319,7 @@ def layout():
                         ),
                     ]
                 )
-            ],
-            style={"padding-left": "15px", "padding-right": "15px"},
+            ],            
         ),
     ]
 
