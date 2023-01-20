@@ -40,11 +40,11 @@ app.layout = html.Div(
         dbc.NavbarSimple(
             children=[
                 dbc.NavItem(dbc.NavLink("Inicio", href=app.get_relative_path("/"))),
+                dbc.NavItem(dbc.NavLink("Seasons", href=app.get_relative_path("/seasons"))),
+                dbc.NavItem(dbc.NavLink("Constructors", href=app.get_relative_path("/constructors"))),
                 dbc.DropdownMenu(
                     children=[
-                        dbc.DropdownMenuItem("Menu", header=True),
-                        dbc.DropdownMenuItem("Seasons", href=app.get_relative_path("/seasons")),
-                        dbc.DropdownMenuItem("Constructors", href=app.get_relative_path("/constructors")),
+                        dbc.DropdownMenuItem("Menu", header=True),                        
                         dbc.DropdownMenuItem("Circuits", href=app.get_relative_path("/circuits")),
                     ],
                     nav=True,

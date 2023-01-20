@@ -97,6 +97,21 @@ def layout():
                     [
                         dbc.Card(
                             children=[
+                                dbc.CardHeader("Inicio"),
+                                dbc.CardBody(
+                                    children=[
+                                        dcc.Markdown(
+                                            """
+                                            ...
+                                            """,
+                                            style={"margin": "0 10px"},
+                                        ),
+                                    ]
+                                )
+                            ]
+                        ),
+                        dbc.Card(
+                            children=[
                                 dbc.CardHeader("LATEST DRIVER STANDINGS, TOP 10"),
                                 dbc.CardBody(
                                     children=[

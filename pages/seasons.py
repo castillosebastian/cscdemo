@@ -117,6 +117,22 @@ def season_graph(year, selected_drivers):
 
 def layout():
     return [
+        dbc.Card(
+            children=[
+                dbc.CardHeader("Seasons"),
+                    dbc.CardBody(
+                        children=[
+                            dcc.Markdown(
+                                """
+                                ...
+
+                                """,
+                                style={"margin": "0 10px"},
+                        ),
+                    ]
+                )
+            ]
+        ),
         dbc.Row(
             children=[
                 dbc.Col(
