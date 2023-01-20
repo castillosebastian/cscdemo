@@ -29,6 +29,9 @@ body {
     font-family: "Lato", sans-serif;
 }
 
+.active-link{    
+    color: white;
+}
 .season_dropdown {
     font-family: "Lato", sans-serif;
     width: 25%;

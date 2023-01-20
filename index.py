@@ -61,14 +61,14 @@ app.layout = html.Div(
                 ),
                 dbc.Nav(
                     children=[
-                        dbc.NavLink("Home", href=app.get_relative_path("/")),
-                        dbc.NavLink("Seasons", href=app.get_relative_path("/seasons")),
-                        dbc.NavLink("Drivers", href=app.get_relative_path("/drivers")),
+                        dbc.NavLink("Home", href=app.get_relative_path("/"), active="exact", className='active-link'),
+                        dbc.NavLink("Seasons", href=app.get_relative_path("/seasons"), active="exact", className='active-link'),
+                        dbc.NavLink("Drivers", href=app.get_relative_path("/drivers"), active="exact", className='active-link'),
                         dbc.NavLink(
-                            "Constructors", href=app.get_relative_path("/constructors")
+                            "Constructors", href=app.get_relative_path("/constructors"), active="exact", className='active-link'
                         ),
                         dbc.NavLink(
-                            "Circuits", href=app.get_relative_path("/circuits")
+                            "Circuits", href=app.get_relative_path("/circuits"), active="exact", className='active-link'
                         ),
                     ],
                     style=SIDEBAR_STYLE,
