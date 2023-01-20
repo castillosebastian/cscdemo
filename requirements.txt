@@ -6,3 +6,4 @@ numpy
 wikipedia
 dash-bootstrap-components
 datatable
+dash-mantine-components
