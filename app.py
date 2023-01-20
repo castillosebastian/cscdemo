@@ -1,8 +1,8 @@
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc
+from dash import html
 import dash_bootstrap_components as dbc
-import dash_table
+from dash import dash_table
 from dash.exceptions import PreventUpdate
 import pandas as pd
 import plotly.graph_objs as go
@@ -20,4 +20,4 @@ app = dash.Dash(
     suppress_callback_exceptions=True,
     external_stylesheets=[dbc.themes.BOOTSTRAP],
 )
-app.title = "Formula 1 Statistics"
+app.title = "CSC Analytics"

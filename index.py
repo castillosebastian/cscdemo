@@ -1,7 +1,8 @@
 import dash
-import dash_core_components as dcc
+from dash import dcc
+from dash import html
 import dash_bootstrap_components as dbc
-import dash_html_components as html
+from dash import dash_table
 from dash.exceptions import PreventUpdate
 import pandas as pd
 import plotly.graph_objs as go
@@ -14,7 +15,22 @@ from app import app
 
 import pages
 
+SIDEBAR_STYLE = {
+    #"position": "fixed",
+    "top": 2,
+    "left": 10,
+    "bottom": 0,
+    "width": "150rem",
+    "padding": "2rem 1rem",
+    "font-size": "0.8cm",
+    "background-color": "#878f99",
+}
 
+CONTENT_STYLE = {
+    "margin-left": "5rem",
+    "margin-right": "3rem",
+    "padding": "2rem 1rem",
+}
 server = app.server
 
 app.layout = html.Div(
@@ -28,22 +44,22 @@ app.layout = html.Div(
                         [
                             dbc.Col(
                                 html.Img(
-                                    src=app.get_asset_url("logo.png"), height="30px"
+                                    src=app.get_asset_url("logo.png"), height="200px"
                                 )
                             ),
-                            dbc.Col(
-                                dbc.NavbarBrand(
-                                    "Formula 1 Stats Page", className="ml-2"
-                                )
-                            ),
+                            #dbc.Col(
+                            #    dbc.NavbarBrand(
+                            #        "CSC Analytics", className="ml-2"
+                            #    )
+                            #),
                         ],
-                        no_gutters=True,
+                        #no_gutters=True,
                         className="ml-auto flex-nowrap mt-3 mt-md-0",
                         align="center",
                     ),
                     href=app.get_relative_path("/"),
                 ),
-                dbc.Row(
+                dbc.Nav(
                     children=[
                         dbc.NavLink("Home", href=app.get_relative_path("/")),
                         dbc.NavLink("Seasons", href=app.get_relative_path("/seasons")),
@@ -55,11 +71,12 @@ app.layout = html.Div(
                             "Circuits", href=app.get_relative_path("/circuits")
                         ),
                     ],
-                    style={"paddingLeft": "480px"},
+                    style=SIDEBAR_STYLE,
                 ),
-            ]
+            ],
+           style=CONTENT_STYLE
         ),
-        html.Div(id="page-content"),
+        html.Div(id="page-content", style=CONTENT_STYLE),
     ]
 )
 

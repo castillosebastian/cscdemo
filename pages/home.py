@@ -1,8 +1,8 @@
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc
+from dash import html
 import dash_bootstrap_components as dbc
-import dash_table
+from dash import dash_table
 from dash.exceptions import PreventUpdate
 import pandas as pd
 import plotly.graph_objs as go
@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 import re
 from urllib.request import urlopen
 import sqlite3
-import dash_twitter_widget
+#import dash_twitter_widget
 
 from app import app
 from data_reader import *
@@ -90,32 +90,30 @@ df_homepage_drivers = generate_recent_driver_standings()
 
 
 def layout():
-    return [
-        dbc.Col(
-            dbc.Card(
-                children=[
-                    dbc.CardHeader("WELCOME TO F1STATS!"),
-                    dbc.CardBody(
-                        [
-                            dcc.Markdown(
-                                """
-                                This web application produces race results, driver and constructor rankings, up-to-date timetables, circuit layouts, and comparisons of Formula 1 seasons from 1950 to the present.
-
-                                Built with Python, [Dash](https://plotly.com/dash/), and the [Ergast Developer API](http://ergast.com/mrd/) (Motor Racing Data), this application provides users an in-depth look at the numbers behind Formula 1.
-
-                                Questions, comments, or concerns? Feel free to reach out on [LinkedIn](https://www.linkedin.com/in/jeonchristopher/) and check out the source code [here](https://github.com/christopherjeon/F1STATS-public).
-                                """,
-                                style={"margin": "0 10px"},
-                            )
-                        ]
-                    ),
-                ]
-            ),
-            width=12,
-        ),
+    return [        
+        #dbc.Col(
+        #    dbc.Card(
+        #        children=[                    
+        #            dbc.CardBody(
+        #                [
+        #                    dcc.Markdown(
+        #                        """
+        #                        Tablero de visualización de datos creado por Lic.Claudio Sebastián Castillo.
+        #                        """,
+        #                        style={
+        #                            "margin": "10px",
+        #                            "font-size": "20px",
+        #                        },
+        #                    )
+        #                ]
+        #            ),
+        #        ]
+        #    ),
+        #    width=12,
+        #),
         html.Div(
             children=[
-                dbc.CardDeck(
+                dbc.Card(
                     [
                         dbc.Card(
                             children=[
@@ -183,9 +181,33 @@ def layout():
                         ),
                         dbc.Card(
                             children=[
-                                dash_twitter_widget.DashTwitterWidget(
-                                    id="input", value="SkySportsF1"
-                                )
+                                dbc.CardHeader("LATEST CONSTRUCTOR STANDINGS"),
+                                dbc.CardBody(
+                                    children=[
+                                        dash_table.DataTable(
+                                            columns=[
+                                                {"name": i, "id": i}
+                                                for i in df_homepage_constructors.columns
+                                            ],
+                                            data=df_homepage_constructors.to_dict(
+                                                "records"
+                                            ),
+                                            page_current=0,
+                                            style_header={
+                                                "backgroundColor": "white",
+                                                "fontWeight": "bold",
+                                            },
+                                            style_cell={"textAlign": "center"},
+                                            style_cell_conditional=[
+                                                {
+                                                    "if": {"column_id": "Finished"},
+                                                    "textAlign": "center",
+                                                }
+                                            ],
+                                            style_as_list_view=True,
+                                        )
+                                    ]
+                                ),
                             ]
                         ),
                     ]

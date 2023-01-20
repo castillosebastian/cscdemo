@@ -3,7 +3,7 @@ h2 h3,
 h4,
 h5,
 p {
-    font-family: 'Geneva';
+    font-family: "Lato", sans-serif;
 }
 
 p {
@@ -11,11 +11,14 @@ p {
 }
 
 body {
-    background-color: #E0E0E0;
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    background-color: #F7F7F7;
 }
 
 .site_logo {
-    width: 20vw;
+    width: 12cm;
+    height: 12cm;
 }
 
 .title_bar {
@@ -23,11 +26,11 @@ body {
 }
 
 .tabs {
-    font-family: 'Geneva';
+    font-family: "Lato", sans-serif;
 }
 
 .season_dropdown {
-    font-family: 'Geneva';
+    font-family: "Lato", sans-serif;
     width: 25%;
 }
 
