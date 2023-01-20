@@ -36,30 +36,43 @@ server = app.server
 app.layout = html.Div(
     [
         dcc.Location(id="url", refresh=False),
-
-        dbc.NavbarSimple(
+        dbc.Navbar(
             children=[
-                dbc.NavItem(dbc.NavLink("Inicio", href=app.get_relative_path("/"))),
-                dbc.DropdownMenu(
+                html.A(
+                    # Use row and col to control vertical alignment of logo / brand
+                    dbc.Row(
+                        [
+                            dbc.Col(
+                                html.Img(
+                                    src=app.get_asset_url("logo_multiplo.png"), height="300px"
+                                )
+                            ),                            
+                        ],                  
+                        align="center",
+                    ),
+                    href=app.get_relative_path("/"),
+                ),
+                dbc.Nav(
                     children=[
-                        dbc.DropdownMenuItem("Menu", header=True),
-                        dbc.DropdownMenuItem("Seasons", href=app.get_relative_path("/seasons")),
-                        dbc.DropdownMenuItem("Constructors", href=app.get_relative_path("/constructors")),
-                        dbc.DropdownMenuItem("Circuits", href=app.get_relative_path("/circuits")),
+                        dbc.NavLink("Home", href=app.get_relative_path("/"), active="exact", className='active-link'),
+                        dbc.NavLink("Seasons", href=app.get_relative_path("/seasons"), active="exact", className='active-link'),
+                        #dbc.NavLink("Drivers", href=app.get_relative_path("/drivers"), active="exact", className='active-link'),
+                        dbc.NavLink(
+                            "Constructors", href=app.get_relative_path("/constructors"), active="exact", className='active-link'
+                        ),
+                        dbc.NavLink(
+                            "Circuits", href=app.get_relative_path("/circuits"), active="exact", className='active-link'
+                        ),
                     ],
-                    nav=True,
-                    in_navbar=True,
-                    label="Menu",
+                   style=SIDEBAR_STYLE,
                 ),
             ],
-            brand="Multiplo",
-            brand_href=app.get_relative_path("/"),
-            color="primary",
-            dark=True,
-        ),        
+           style=CONTENT_STYLE
+        ),
         html.Div(id="page-content", style=CONTENT_STYLE),
     ]
 )
+
 
 @app.callback(Output("page-content", "children"), [Input("url", "pathname")])
 def display_page_content(pathname):
