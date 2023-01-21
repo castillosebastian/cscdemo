@@ -118,13 +118,7 @@ def layout():
                                     clearable=True,
                                     searchable=True,
                                     value=2020,
-                                    style ={
-                                            'backgroundColor': 'transparent',
-                                            'color': 'black',
-                                            'font_size': '18px',
-                                        },
-                                    ),
-                                #html.Div(id="constructor-standings-card"),
+                                )                                    
                             ]
                         )
                     ),
@@ -160,17 +154,12 @@ def layout():
 def get_constructor_standings(year):
     if year is not None:
         df = constructor_standings_by_year(year)
-        return dash_table.DataTable(
-            columns=[{"name": i, "id": i} for i in df.columns],
-            data=df.to_dict("records"),
-            page_current=0,
-            style_header={"backgroundColor": "white", "fontWeight": "bold"},
-            style_cell={"textAlign": "center"},
-            style_cell_conditional=[
-                {"if": {"column_id": "Finished"}, "textAlign": "center"}
-            ],
-            style_as_list_view=True,
-        )
+        return  dbc.Table.from_dataframe(
+                df, 
+                striped=True, 
+                bordered=True, 
+                hover=True
+            )     
     else:
         raise PreventUpdate
 

@@ -15,7 +15,6 @@ from bs4 import BeautifulSoup
 import re
 from urllib.request import urlopen
 import sqlite3
-#import dash_twitter_widget
 
 from app import app
 from data_reader import *
