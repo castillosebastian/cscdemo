@@ -118,7 +118,12 @@ def layout():
                                     clearable=True,
                                     searchable=True,
                                     value=2020,
-                                ),
+                                    style ={
+                                            'backgroundColor': 'transparent',
+                                            'color': 'black',
+                                            'font_size': '18px',
+                                        },
+                                    ),
                                 #html.Div(id="constructor-standings-card"),
                             ]
                         )

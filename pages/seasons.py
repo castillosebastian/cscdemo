@@ -146,13 +146,24 @@ def layout():
                                         {"label": i, "value": i} for i in season_list
                                     ],
                                     value=2020,
+                                    style ={
+                                                'backgroundColor': 'transparent',
+                                                'color': 'black',
+                                                'font_size': '18px',
+                                    },
                                 ),
                                 html.H6("Select Driver(s)"),
                                 dcc.Loading(
                                     children=[
-                                        dcc.Dropdown(id="driver-dropdown", multi=True)
+                                        dcc.Dropdown(id="driver-dropdown", multi=True,
+                                        style ={
+                                                'backgroundColor': 'transparent',
+                                                'color': 'black',
+                                                'font_size': '18px',
+                                            },
+                                        ),
                                     ],
-                                    type="circle",
+                                    type="circle",                                    
                                 ),
                             ]
                         )
@@ -173,7 +184,7 @@ def layout():
                    width=8,
                 ),
             ]
-        )
+        ),
     ]
 
 

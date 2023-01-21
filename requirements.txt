@@ -3,7 +3,7 @@ dash
 gunicorn
 pandas
 numpy
-wikipedia
-dash-bootstrap-components
 datatable
+dash-bootstrap-components
+dash_bootstrap_templates
 dash-mantine-components

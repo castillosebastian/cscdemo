@@ -121,19 +121,20 @@ def layout():
                                                 for i in df_homepage_drivers.columns
                                             ],
                                             data=df_homepage_drivers.to_dict("records"),
-                                            page_current=0,
-                                            style_data={
-                                                'color': 'black',
-                                                'backgroundColor': 'white'
-                                            },
-                                            style_data_conditional=[{
-                                                'if': {'row_index': 'odd'},
-                                                'backgroundColor': 'rgb(220, 220, 220)',
-                                                }],
+                                            #row_selectable="single",
+                                            row_deletable=True,
+                                            editable=True,
+                                            filter_action="native",
+                                            sort_action="native",
+                                            style_table={"overflowX": "auto"},
                                             style_header={
-                                                'backgroundColor': 'rgb(210, 210, 210)',
+                                                'backgroundColor': 'transparent',
+                                                'color': 'black'
+                                            },
+                                            style_data={
+                                                'backgroundColor': 'transparent',
                                                 'color': 'black',
-                                                'fontWeight': 'bold'
+                                                'font_size': '18px',
                                             },
                                         )
                                     ]
@@ -153,19 +154,20 @@ def layout():
                                             data=df_homepage_constructors.to_dict(
                                                 "records"
                                             ),
-                                            page_current=0,
-                                            style_data={
-                                                'color': 'black',
-                                                'backgroundColor': 'white'
-                                            },
-                                            style_data_conditional=[{
-                                                'if': {'row_index': 'odd'},
-                                                'backgroundColor': 'rgb(220, 220, 220)',
-                                                }],
+                                            #row_selectable="single",
+                                            row_deletable=True,
+                                            editable=True,
+                                            filter_action="native",
+                                            sort_action="native",
+                                            style_table={"overflowX": "auto"},
                                             style_header={
-                                                'backgroundColor': 'rgb(210, 210, 210)',
+                                                'backgroundColor': 'transparent',
+                                                'color': 'black'
+                                            },
+                                            style_data={
+                                                'backgroundColor': 'transparent',
                                                 'color': 'black',
-                                                'fontWeight': 'bold'
+                                                'font_size': '18px',
                                             },
                                         )
                                     ]
@@ -185,19 +187,20 @@ def layout():
                                             data=df_homepage_constructors.to_dict(
                                                 "records"
                                             ),
-                                            page_current=0,
-                                            style_data={
-                                                'color': 'black',
-                                                'backgroundColor': 'white'
-                                            },
-                                            style_data_conditional=[{
-                                                'if': {'row_index': 'odd'},
-                                                'backgroundColor': 'rgb(220, 220, 220)',
-                                                }],
+                                            #row_selectable="single",
+                                            row_deletable=True,
+                                            editable=True,
+                                            filter_action="native",
+                                            sort_action="native",
+                                            style_table={"overflowX": "auto"},
                                             style_header={
-                                                'backgroundColor': 'rgb(210, 210, 210)',
+                                                'backgroundColor': 'transparent',
+                                                'color': 'black'
+                                            },
+                                            style_data={
+                                                'backgroundColor': 'transparent',
                                                 'color': 'black',
-                                                'fontWeight': 'bold'
+                                                'font_size': '18px',
                                             },
                                         )
                                     ]
