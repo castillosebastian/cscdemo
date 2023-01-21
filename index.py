@@ -22,17 +22,6 @@ LOGO = app.get_asset_url("logo2.png")
 
 server = app.server
 
-# cambiar raiz
-
-nav_item = dbc.NavItem(
-    children=[
-        dbc.NavItem(dbc.NavLink("Inicio", href=app.get_relative_path("/"))),
-        dbc.NavItem(dbc.NavLink("Seasons", href=app.get_relative_path("/seasons"))),
-        dbc.NavItem(dbc.NavLink("Constructors", href=app.get_relative_path("/constructors"))),
-        dbc.NavItem(dbc.NavLink("Circuits", href=app.get_relative_path("/circuits"))),
-    ]
-)
-
 # make a reuseable dropdown for the different examples
 dropdown = dbc.DropdownMenu(
     children=[
@@ -54,7 +43,11 @@ navbar = dbc.Navbar(
                 dbc.Row(
                     [
                         dbc.Col(html.Img(src=LOGO, height="130px")),
-                        dbc.Col(dbc.NavbarBrand("Multiplo", className="ms-2")),
+                        dbc.Col(dbc.NavbarBrand(
+                            "multiplo", 
+                            className="ms-2",
+                            style={"font-size": "40px"},
+                            )),
                     ],
                     align="center",
                     className="g-0",
@@ -78,6 +71,17 @@ navbar = dbc.Navbar(
                                     # push later links to end of nav
                                     className="me-auto",
                                 ),
+                                dbc.Collapse(
+                                    dbc.Nav(
+                                        [
+                                            dropdown
+                                        ], 
+                                        className="ms-auto", 
+                                        navbar=True),
+                                    id="navbar-collapse1",
+                                    navbar=True,
+                                ),
+                                # Cambiar estos elementos
                                 dbc.NavItem(dbc.NavLink("Help")),
                                 dbc.NavItem(dbc.NavLink("About")),
                             ],
