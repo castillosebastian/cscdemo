@@ -109,99 +109,32 @@ def layout():
                                     ]
                                 )
                             ]
-                        ),
+                        ),                        
                         dbc.Card(
                             children=[
-                                dbc.CardHeader("LATEST DRIVER STANDINGS, TOP 10"),
+                                dbc.CardHeader("Pilotos"),
                                 dbc.CardBody(
                                     children=[
-                                        dash_table.DataTable(
-                                            columns=[
-                                                {"name": i, "id": i}
-                                                for i in df_homepage_drivers.columns
-                                            ],
-                                            data=df_homepage_drivers.to_dict("records"),
-                                            #row_selectable="single",
-                                            row_deletable=True,
-                                            editable=True,
-                                            filter_action="native",
-                                            sort_action="native",
-                                            style_table={"overflowX": "auto"},
-                                            style_header={
-                                                'backgroundColor': 'transparent',
-                                                'color': 'black'
-                                            },
-                                            style_data={
-                                                'backgroundColor': 'transparent',
-                                                'color': 'black',
-                                                'font_size': '18px',
-                                            },
-                                        )
+                                        dbc.Table.from_dataframe(
+                                            df_homepage_drivers, 
+                                            striped=True, 
+                                            bordered=True, 
+                                            hover=True
+                                        )                                        
                                     ]
                                 ),
                             ]
                         ),
                         dbc.Card(
                             children=[
-                                dbc.CardHeader("LATEST CONSTRUCTOR STANDINGS"),
+                                dbc.CardHeader("Escuderías"),
                                 dbc.CardBody(
                                     children=[
-                                        dash_table.DataTable(
-                                            columns=[
-                                                {"name": i, "id": i}
-                                                for i in df_homepage_constructors.columns
-                                            ],
-                                            data=df_homepage_constructors.to_dict(
-                                                "records"
-                                            ),
-                                            #row_selectable="single",
-                                            row_deletable=True,
-                                            editable=True,
-                                            filter_action="native",
-                                            sort_action="native",
-                                            style_table={"overflowX": "auto"},
-                                            style_header={
-                                                'backgroundColor': 'transparent',
-                                                'color': 'black'
-                                            },
-                                            style_data={
-                                                'backgroundColor': 'transparent',
-                                                'color': 'black',
-                                                'font_size': '18px',
-                                            },
-                                        )
-                                    ]
-                                ),
-                            ]
-                        ),
-                        dbc.Card(
-                            children=[
-                                dbc.CardHeader("LATEST CONSTRUCTOR STANDINGS"),
-                                dbc.CardBody(
-                                    children=[
-                                        dash_table.DataTable(
-                                            columns=[
-                                                {"name": i, "id": i}
-                                                for i in df_homepage_constructors.columns
-                                            ],
-                                            data=df_homepage_constructors.to_dict(
-                                                "records"
-                                            ),
-                                            #row_selectable="single",
-                                            row_deletable=True,
-                                            editable=True,
-                                            filter_action="native",
-                                            sort_action="native",
-                                            style_table={"overflowX": "auto"},
-                                            style_header={
-                                                'backgroundColor': 'transparent',
-                                                'color': 'black'
-                                            },
-                                            style_data={
-                                                'backgroundColor': 'transparent',
-                                                'color': 'black',
-                                                'font_size': '18px',
-                                            },
+                                        dbc.Table.from_dataframe(
+                                            df_homepage_constructors, 
+                                            striped=True, 
+                                            bordered=True, 
+                                            hover=True
                                         )
                                     ]
                                 ),

@@ -12,22 +12,12 @@ import pages
 from dash_bootstrap_templates import load_figure_template
 load_figure_template("vapor")
 
-SIDEBAR_STYLE = {
-    #"position": "fixed",
-    "top": 2,
-    "left": 10,
-    "bottom": 0,
-    "width": "150rem",
-    "padding": "2rem 1rem",
-    "font-size": "0.9cm",
-    #"background-color": "#878f99",
-}
-
 CONTENT_STYLE = {
     "margin-left": "5rem",
     "margin-right": "3rem",
     "padding": "2rem 1rem",
 }
+
 server = app.server
 
 app.layout = html.Div(
@@ -53,12 +43,14 @@ app.layout = html.Div(
             brand_href=app.get_relative_path("/"),
             color="primary",
             dark=True,
+            style=CONTENT_STYLE,
         ),        
         html.Div(id="page-content", style=CONTENT_STYLE),
     ]
 )
 
 @app.callback(Output("page-content", "children"), [Input("url", "pathname")])
+
 def display_page_content(pathname):
     path = app.strip_relative_path(pathname)
     if not path:
