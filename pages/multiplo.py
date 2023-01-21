@@ -24,33 +24,124 @@ def layout():
             [                
                 dbc.Row(                                       
                         children=[
-                            dbc.Col(html.Div([
-                                        gif.GifPlayer(
-                                                gif='assets/geometry0.gif',
-                                                still='assets/geometry0.gif',
-                                                autoplay = True,
-                                            )
-                                        ]
-                                    ),
-                                    width=4,
-                                ),
-                            dbc.Col(
-                                    dbc.Card(
-                                        dbc.CardBody(
-                                            children=[
-                                                dbc.CardHeader("Datos dispersos y heterogéneos"),
-                                                html.P(
-                                                    "This is a wider card with supporting text "
-                                                    "below as a natural lead-in to additional "
-                                                    "content. This content is a bit longer.",                                                    
-                                                ),
-                                            ]
+                            dbc.Col(html.Div(
+                                [
+                                    gif.GifPlayer(
+                                        gif='assets/geometry0.gif',
+                                        still='assets/geometry0.gif',
+                                        autoplay = True,
                                         )
-                                    ),
-                                width=8,
+                                    ]
+                                ),
+                                width=4,
                             ),
-                        ],
-                )
+                            dbc.Col(
+                                dbc.Card(
+                                    dbc.CardBody(
+                                        children=[
+                                            dbc.CardHeader("Datos dispersos y heterogéneos"),
+                                            html.P(
+                                                "This is a wider card with supporting text "
+                                                "below as a natural lead-in to additional "
+                                                "content. This content is a bit longer.",                                                    
+                                            ),
+                                        ]
+                                    )
+                                ),
+                            width=8,
+                        ),
+                    ],
+                ),
+                dbc.Row(                                       
+                        children=[
+                            dbc.Col(html.Div(
+                                [
+                                    gif.GifPlayer(
+                                        gif='assets/geometry1.gif',
+                                        still='assets/geometry1.gif',
+                                        autoplay = True,
+                                        )
+                                    ]
+                                ),
+                                width=4,
+                            ),
+                            dbc.Col(
+                                dbc.Card(
+                                    dbc.CardBody(
+                                        children=[
+                                            dbc.CardHeader("Datos dispersos y heterogéneos"),
+                                            html.P(
+                                                "This is a wider card with supporting text "
+                                                "below as a natural lead-in to additional "
+                                                "content. This content is a bit longer.",                                                    
+                                            ),
+                                        ]
+                                    )
+                                ),
+                            width=8,
+                        ),
+                    ],
+                ),
+                dbc.Row(                                       
+                        children=[
+                            dbc.Col(html.Div(
+                                [
+                                    gif.GifPlayer(
+                                        gif='assets/geometry2.gif',
+                                        still='assets/geometry2.gif',
+                                        autoplay = True,
+                                        )
+                                    ]
+                                ),
+                                width=4,
+                            ),
+                            dbc.Col(
+                                dbc.Card(
+                                    dbc.CardBody(
+                                        children=[
+                                            dbc.CardHeader("Datos dispersos y heterogéneos"),
+                                            html.P(
+                                                "This is a wider card with supporting text "
+                                                "below as a natural lead-in to additional "
+                                                "content. This content is a bit longer.",                                                    
+                                            ),
+                                        ]
+                                    )
+                                ),
+                            width=8,
+                        ),
+                    ],
+                ),
+                dbc.Row(                                       
+                        children=[
+                            dbc.Col(html.Div(
+                                [
+                                    gif.GifPlayer(
+                                        gif='assets/geometry3.gif',
+                                        still='assets/geometry3.gif',
+                                        autoplay = True,
+                                        )
+                                    ]
+                                ),
+                                width=4,
+                            ),
+                            dbc.Col(
+                                dbc.Card(
+                                    dbc.CardBody(
+                                        children=[
+                                            dbc.CardHeader("Datos dispersos y heterogéneos"),
+                                            html.P(
+                                                "This is a wider card with supporting text "
+                                                "below as a natural lead-in to additional "
+                                                "content. This content is a bit longer.",                                                    
+                                            ),
+                                        ]
+                                    )
+                                ),
+                            width=8,
+                        ),
+                    ],
+                ),
             ]),
         ]
     
