@@ -67,7 +67,7 @@ navbar = dbc.Navbar(
                                 dbc.NavItem(dbc.NavLink("Circuits", href=app.get_relative_path("/circuits"))),
                                 dbc.NavItem(
                                     dbc.NavLink("Circuits", href=app.get_relative_path("/circuits")),
-                                    # add an auto margin after page 2 to
+                                    # add an auto margin after page to
                                     # push later links to end of nav
                                     className="me-auto",
                                 ),
