@@ -17,131 +17,136 @@ from urllib.request import urlopen
 import sqlite3
 
 from app import app
-from data_reader import *
-from pages.constructors import constructor_standings_by_year
 
-URL_seasons = "http://ergast.com/api/f1/seasons.json?limit=80"
+geometry_main = app.get_asset_url("geometry_main.gif")
 
-data_seasons = requests.get(url=URL_seasons).json()
+img_style = {"height": "400px", "width": "700px"}
 
-season_list = []
-for year in data_seasons["MRData"]["SeasonTable"]["Seasons"]:
-    season_list.append(year["season"])
-
-season_list.reverse()
-
-df_races_test = df_races.rename(columns={"name": "race_name", "url": "race_url"})
-df_homepage_constructors = constructor_standings_by_year(2020)
-
-
-def generate_recent_driver_standings():
-    merge_standings = pd.merge(
-        df_drivers, df_driver_standings, how="inner", on=["driverId"]
-    )
-
-    merge_standings_races = pd.merge(
-        merge_standings, df_races_test, how="inner", on=["raceId"]
-    )
-
-    merge_standings_races_filtered = merge_standings_races[
-        [
-            "forename",
-            "surname",
-            "nationality",
-            "points",
-            "positionText",
-            "wins",
-            "year",
-            "round",
-        ]
+carrusel = [
+    {"key": "1", "src": "/assets/im4_edited.png"},
+    {"key": "2", "src": "/assets/im1_edited.png"},    
+    {"key": "4", "src": "/assets/im2_edited.png"},
+    {"key": "5", "src": "/assets/im3_edited.png"},
     ]
-
-    standings_all_rounds = merge_standings_races_filtered[
-        (merge_standings_races_filtered["year"] == 2020)
-    ].sort_values(by=["round", "points"], ascending=False)
-    standings_all_rounds["driverName"] = (
-        standings_all_rounds["forename"].astype(str)
-        + " "
-        + standings_all_rounds["surname"]
-    )
-    final_round = standings_all_rounds["round"].max()
-    standings_final_round = standings_all_rounds[
-        standings_all_rounds["round"] == final_round
-    ]
-    standings_final_round = standings_final_round[
-        ["positionText", "driverName", "nationality", "points", "wins"]
-    ]
-
-    standings_final_round = standings_final_round.rename(
-        columns={
-            "driverName": "Name",
-            "nationality": "Nationality",
-            "points": "Points",
-            "positionText": "Rank",
-            "wins": "Wins",
-            "year": "Year",
-        }
-    )
-    return standings_final_round
-
-
-df_homepage_drivers = generate_recent_driver_standings()
 
 
 def layout():
-    return [    
-        html.Div(
-            children=[
-                dbc.Card(
-                    [
-                        dbc.Card(
-                            children=[
-                                dbc.CardHeader("Inicio"),
-                                dbc.CardBody(
-                                    children=[
-                                        dcc.Markdown(
-                                            """
-                                            ...
-                                            """,
-                                            style={"margin": "0 10px"},
-                                        ),
-                                    ]
-                                )
-                            ]
-                        ),                        
-                        dbc.Card(
-                            children=[
-                                dbc.CardHeader("Pilotos"),
-                                dbc.CardBody(
-                                    children=[
-                                        dbc.Table.from_dataframe(
-                                            df_homepage_drivers, 
-                                            striped=True, 
-                                            bordered=True, 
-                                            hover=True
-                                        )                                        
+    return [
+        html.Div(            
+            [     
+                dbc.Row(                                       
+                        children=[
+                            dbc.Col(html.Div(
+                                [
+                                    dbc.Carousel(
+                                        items= carrusel,                                       
+                                        class_name="carousel-fade",
+                                        controls=False,
+                                        indicators=True,
+                                        interval=4000,
+                                        style = img_style,
+                                        #ride="carousel",
+                                    )
+                                ]                                    
+                            ),
+                            width=6,
+                            ),
+                            dbc.Col(html.Div(
+                                dcc.Markdown('''
+                                    >
+                                    > 
+                                    > Multiplo es un empresa dedicada a mejorar procesos
+                                    > aplicando *Inteligencia Artificial* a tareas humanas
+                                    > [->](/multiplo)
+                                    >                                    
+                                    '''
+                                ),                                
+                                style = {
+                                    "font-size": 40,
+                                },
+                            ),
+                            width=6,
+                        )
+                    ],
+                    align = "center", 
+                    ),
+                html.Br(),
+                html.Br(),
+                html.Br(),
+                html.Br(), 
+                html.Br(),
+                html.Br(),
+                html.Br(),
+                html.Br(),
+                dbc.Col(html.Div(
+                                dcc.Markdown('''
+                                    >
+                                    > 
+                                    > Multiplo es un empresa dedicada a mejorar procesos",
+                                    > mediante la incorporación de *Inteligencia Artificial*",                                    
+                                    > en las tareas de las organizaciones.
+                                    > [Ver nuestra metodología de trabajo](/multiplo)
+                                    >                                    
+                                    '''
+                                ),
+                                style = {
+                                    "font-size": 18,
+                                },
+                            ),
+                            #width=12,
+                        ),          
+                dbc.Row(                                       
+                        children=[
+                            dbc.Col(html.Div(
+                                [
+                                    
                                     ]
                                 ),
-                            ]
+                                width=4,
+                            ),
+                            dbc.Col(
+                                dbc.Card(
+                                    dbc.CardBody(
+                                        children=[
+                                            dbc.CardHeader("Datos dispersos y heterogéneos"),
+                                            html.P(
+                                                "This is a wider card with supporting text "
+                                                "below as a natural lead-in to additional "
+                                                "content. This content is a bit longer.",                                                    
+                                            ),
+                                        ]
+                                    )
+                                ),
+                            width=8,
                         ),
-                        dbc.Card(
-                            children=[
-                                dbc.CardHeader("Escuderías"),
-                                dbc.CardBody(
-                                    children=[
-                                        dbc.Table.from_dataframe(
-                                            df_homepage_constructors, 
-                                            striped=True, 
-                                            bordered=True, 
-                                            hover=True
-                                        )
+                    ],
+                ),
+                dbc.Row(                                       
+                        children=[
+                            dbc.Col(html.Div(
+                                [
+                                   
                                     ]
                                 ),
-                            ]
+                                width=4,
+                            ),
+                            dbc.Col(
+                                dbc.Card(
+                                    dbc.CardBody(
+                                        children=[
+                                            dbc.CardHeader("Datos dispersos y heterogéneos"),
+                                            html.P(
+                                                "This is a wider card with supporting text "
+                                                "below as a natural lead-in to additional "
+                                                "content. This content is a bit longer.",                                                    
+                                            ),
+                                        ]
+                                    )
+                                ),
+                            width=8,
                         ),
-                    ]
-                )
-            ],            
-        ),
-    ]
-
+                    ],
+                ),
+            ]),
+        ]
+    
