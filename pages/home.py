@@ -29,6 +29,19 @@ carrusel = [
     {"key": "5", "src": "/assets/im3_edited.png"},
     ]
 
+problemas = [
+    dbc.CardHeader("Card header"),
+    dbc.CardBody(
+        [
+            html.H5("Card title", className="card-title"),
+            html.P(
+                "This is some card content that we'll reuse",
+                className="card-text",
+            ),
+        ]
+    ),
+]
+
 
 def layout():
     return [
@@ -78,6 +91,47 @@ def layout():
                 html.Br(),
                 html.Br(),
                 html.Br(),
+                dbc.Row(
+                    html.Div(
+                        [
+                            dbc.Button("Conocer nuestras soluciones", color="primary"),
+                            dbc.Button("Comunicarse con ventas", color="secondary"),
+                        ],
+                        className="d-grid gap-2 col-6 mx-auto",
+                    )
+                ),                
+                html.Br(),
+                html.Br(),
+                html.Br(),
+                html.Br(),
+                dbc.Row(
+
+                    html.Div(
+                        [
+                            dbc.Row(
+                                [
+                                    #dbc.Col(dbc.Card(problemas, color="primary", inverse=True)),
+                                    dbc.Col(dbc.Card(problemas, color="dark", inverse=True)),
+                                    dbc.Col(dbc.Card(problemas, color="info", inverse=True)),
+                                ],
+                                className="mb-4",
+                            ),
+                            dbc.Row(
+                                [
+                                    dbc.Col(dbc.Card(problemas, color="success", inverse=True)),
+                                    dbc.Col(dbc.Card(problemas, color="warning", inverse=True)),
+                                    dbc.Col(dbc.Card(problemas, color="danger", inverse=True)),
+                                ],
+                                className="mb-4",
+                            ),
+                        ]
+                    )
+                
+                ),
+                html.Br(),
+                html.Br(),
+                html.Br(),
+                html.Br(),
                 dbc.Col(html.Div(
                                 dcc.Markdown('''
                                     >
@@ -90,10 +144,11 @@ def layout():
                                     '''
                                 ),
                                 style = {
-                                    "font-size": 18,
+                                    "font-size": 40,
                                 },
                             ),
-                            #width=12,
+                            #widht = 10,
+                            align = "center", 
                         ),          
                 dbc.Row(                                       
                         children=[
