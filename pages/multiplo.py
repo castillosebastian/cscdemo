@@ -51,6 +51,7 @@ def layout():
                             width=8,
                         ),
                     ],
+                    align = "center",
                 ),
                 dbc.Row(                                       
                         children=[
@@ -81,6 +82,7 @@ def layout():
                             width=8,
                         ),
                     ],
+                    align = "center",
                 ),
                 dbc.Row(                                       
                         children=[
@@ -111,6 +113,7 @@ def layout():
                             width=8,
                         ),
                     ],
+                    align = "center",
                 ),
                 dbc.Row(                                       
                         children=[
@@ -141,6 +144,7 @@ def layout():
                             width=8,
                         ),
                     ],
+                    align = "center",
                 ),
             ]),
         ]
