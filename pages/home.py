@@ -138,8 +138,8 @@ def layout():
                                 children=[
                                     dmc.CardSection(
                                           gif.GifPlayer(
-                                            gif='assets/liguid1.gif',
-                                            still='assets/liguid1.gif',
+                                            gif='assets/liguid4.gif',
+                                            still='assets/liguid4.gif',
                                             autoplay = True,
                                             )
                                     ),
@@ -234,6 +234,54 @@ def layout():
                                 children=[
                                     dmc.CardSection(
                                           gif.GifPlayer(
+                                            gif='assets/liguid5.gif',
+                                            still='assets/liguid5.gif',
+                                            autoplay = True,
+                                            )
+                                    ),
+                                    dmc.Group(
+                                        [
+                                            #dmc.Text("Norway Fjord Adventures", weight=500),
+                                            #dmc.Badge("Integración", color="gray", variant="dark"),
+                                            dbc.Button("Integración", 
+                                                outline=True, 
+                                                color="light",
+                                                disabled=True,
+                                                ),
+                                        ],
+                                        position="center",
+                                        mt="md",
+                                        mb="xs",
+                                    ),
+                                    dmc.Center(
+                                        children=[
+                                            dmc.Text(
+                                        "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
+                                        size="sm",
+                                        color="dimmed",
+                                            )
+                                        ]
+                                    ),      
+                                    #dmc.Button(
+                                    #    "Book classic tour now",
+                                    #    variant="light",
+                                    #    color="blue",
+                                    #    fullWidth=True,
+                                    #    mt="md",
+                                    #    radius="md",
+                                    #),
+                                ],
+                                #withBorder=True,
+                                #shadow="sm",
+                                radius="md",
+                                #style={"width": 200},
+                                className="border-1 bg-transparent",
+                            )),
+                            dbc.Col(
+                            dmc.Card(
+                                children=[
+                                    dmc.CardSection(
+                                          gif.GifPlayer(
                                             gif='assets/liguid3.gif',
                                             still='assets/liguid3.gif',
                                             autoplay = True,
@@ -282,56 +330,8 @@ def layout():
                                 children=[
                                     dmc.CardSection(
                                           gif.GifPlayer(
-                                            gif='assets/liguid4.gif',
-                                            still='assets/liguid4.gif',
-                                            autoplay = True,
-                                            )
-                                    ),
-                                    dmc.Group(
-                                        [
-                                            #dmc.Text("Norway Fjord Adventures", weight=500),
-                                            #dmc.Badge("Integración", color="gray", variant="dark"),
-                                            dbc.Button("Integración", 
-                                                outline=True, 
-                                                color="light",
-                                                disabled=True,
-                                                ),
-                                        ],
-                                        position="center",
-                                        mt="md",
-                                        mb="xs",
-                                    ),
-                                    dmc.Center(
-                                        children=[
-                                            dmc.Text(
-                                        "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
-                                        size="sm",
-                                        color="dimmed",
-                                            )
-                                        ]
-                                    ),      
-                                    #dmc.Button(
-                                    #    "Book classic tour now",
-                                    #    variant="light",
-                                    #    color="blue",
-                                    #    fullWidth=True,
-                                    #    mt="md",
-                                    #    radius="md",
-                                    #),
-                                ],
-                                #withBorder=True,
-                                #shadow="sm",
-                                radius="md",
-                                #style={"width": 200},
-                                className="border-1 bg-transparent",
-                            )),
-                            dbc.Col(
-                            dmc.Card(
-                                children=[
-                                    dmc.CardSection(
-                                          gif.GifPlayer(
-                                            gif='assets/liguid5.gif',
-                                            still='assets/liguid5.gif',
+                                            gif='assets/liguid1.gif',
+                                            still='assets/liguid1.gif',
                                             autoplay = True,
                                             )
                                     ),
@@ -410,7 +410,7 @@ def layout():
                                         #outline=True,
                                         className="border-0 bg-transparent",
                                         ),
-                                        width=6,
+                                        width=8,
                                     ),
                                 ]
                             ),    
@@ -444,7 +444,7 @@ def layout():
                                         #outline=True,
                                         className="border-0 bg-transparent",
                                         ),
-                                        width=6,
+                                        width=8,
                                     ),
                                 ]
                             ),    
@@ -478,7 +478,7 @@ def layout():
                                         #outline=True,
                                         className="border-0 bg-transparent",
                                         ),
-                                        width=6,
+                                        width=8,
                                     ),
                                 ]
                             ),    
@@ -512,7 +512,7 @@ def layout():
                                         #outline=True,
                                         className="border-0 bg-transparent",
                                         ),
-                                        width=6,
+                                         width=8,
                                     ),
                                 ]
                             ),    
@@ -546,7 +546,7 @@ def layout():
                                         #outline=True,
                                         className="border-0 bg-transparent",
                                         ),
-                                        width=6,
+                                         width=8,
                                     ),
                                 ]
                             ),    
@@ -565,15 +565,10 @@ def layout():
                         align = "center",  
                         style={'text-align': 'right'},                      
                         ),
-                        dbc.Col(html.Div(
-                            dbc.Col(
-                                    gif.GifPlayer(
-                                        gif='assets/unrelatedpoints.gif',
-                                        still='assets/unrelatedpoints.gif',
-                                        autoplay = True,
-                                    )
-                                ),
-                            )),
+                        dbc.Col(html.Div("One of three columns"),
+                        align = "center",  
+                        style={'text-align': 'center'},                             
+                        ),
                         dbc.Col(html.Div("One of three columns"),
                         align = "center",
                         style={'text-align': 'left'},
