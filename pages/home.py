@@ -86,18 +86,28 @@ def layout():
                         children=[
                             dbc.Col(html.Div(
                                 [
-                                     dbc.Carousel(
-                                        items= carrusel,                                       
-                                        class_name="carousel-fade",
-                                        controls=True,
-                                        indicators=True,
-                                        interval=3000,
-                                        variant="dark",
-                                        #ride="carousel",
+                                    dbc.Card(
+                                         dbc.Carousel(
+                                            items= carrusel,                                       
+                                            class_name="carousel-fade",
+                                            controls=True,
+                                            indicators=True,
+                                            interval=3000,
+                                            variant="dark",                                            
+                                            #ride="carousel",
+                                            style={                                                
+                                                "border-radius": "100px",
+                                                "background-color": "rgba(0,0,0,0)",
+                                                "overflow": "hidden",                                                
+                                            }
+                                    ),
+                                    style={
+                                        "border": "none",
+                                    }
                                     )
                                 ]                                    
                             ),
-                            width=6,
+                            width=6,                             
                             ),
                             dbc.Col(html.Div(
                                 dcc.Markdown('''
@@ -157,7 +167,7 @@ def layout():
                                             still='assets/liguid4.gif',
                                             autoplay = True,
                                             )
-                                    ),
+                                    ),                                    
                                     dmc.Group(
                                         [
                                             #dmc.Text("Norway Fjord Adventures", weight=500),
@@ -175,7 +185,7 @@ def layout():
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
-                                        "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
+                                        "A partir de las prioridades y objetivos de la organización al incorporar Inteligencia Artificial a sus procesos, se inicia un proyecto de implementación reuniendo a los responsables internos con el equipo de Multiplo para identificar información disponible, su estado y atributos.",
                                         size="sm",
                                         color="dimmed",
                                             )
