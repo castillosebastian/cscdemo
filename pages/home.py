@@ -15,18 +15,16 @@ from bs4 import BeautifulSoup
 import re
 from urllib.request import urlopen
 import sqlite3
-
 from app import app
+import dash_gif_component as gif
 
-geometry_main = app.get_asset_url("geometry_main.gif")
 
-img_style = {"height": "400px", "width": "700px"}
+img_style = {"height": "250px", "width": "450px"}
 
 carrusel = [
-    {"key": "1", "src": "/assets/im4_edited.png"},
-    {"key": "2", "src": "/assets/im1_edited.png"},    
-    {"key": "4", "src": "/assets/im2_edited.png"},
-    {"key": "5", "src": "/assets/im3_edited.png"},
+    {"key": "1", "src": "/assets/im3_1_edited.png"},
+    {"key": "2", "src": "/assets/im3_2_edited.png"},    
+    {"key": "3", "src": "/assets/im3_3_edited.png"},    
     ]
 
 problemas = [
@@ -42,16 +40,21 @@ problemas = [
     ),
 ]
 
+pie = [
+    dbc.Col(html.Div("Paraná, Entre Ríos Argentina."), width=2),
+    dbc.Col(html.Div("multiplo@algunmail.com"), width=2),
+]
 
 def layout():
     return [
         html.Div(            
-            [     
+            [   
+                # Carrusel y primera frase ----
                 dbc.Row(                                       
                         children=[
                             dbc.Col(html.Div(
                                 [
-                                    dbc.Carousel(
+                                     dbc.Carousel(
                                         items= carrusel,                                       
                                         class_name="carousel-fade",
                                         controls=False,
@@ -62,35 +65,33 @@ def layout():
                                     )
                                 ]                                    
                             ),
-                            width=6,
+                            width=4,
                             ),
                             dbc.Col(html.Div(
                                 dcc.Markdown('''
                                     >
                                     > 
                                     > Multiplo es un empresa dedicada a mejorar procesos
-                                    > aplicando *Inteligencia Artificial* a tareas humanas
-                                    > [->](/multiplo)
+                                    > aplicando *Inteligencia Artificial* en tareas humanas.
+                                    > [(ver)](/multiplo)
                                     >                                    
                                     '''
                                 ),                                
                                 style = {
-                                    "font-size": 40,
+                                    "font-size": 30,
                                 },
                             ),
                             width=6,
                         )
                     ],
                     align = "center", 
-                    ),
-                html.Br(),
-                html.Br(),
-                html.Br(),
-                html.Br(), 
+                    ),                
                 html.Br(),
                 html.Br(),
                 html.Br(),
                 html.Br(),
+                html.Br(),
+                # Contacto ----
                 dbc.Row(
                     html.Div(
                         [
@@ -104,104 +105,69 @@ def layout():
                 html.Br(),
                 html.Br(),
                 html.Br(),
+                # Presentación ----
                 dbc.Row(
-
                     html.Div(
                         [
                             dbc.Row(
                                 [
-                                    #dbc.Col(dbc.Card(problemas, color="primary", inverse=True)),
-                                    dbc.Col(dbc.Card(problemas, color="dark", inverse=True)),
-                                    dbc.Col(dbc.Card(problemas, color="info", inverse=True)),
+                                    dbc.Col(dbc.Card(
+                                        problemas, 
+                                        color="primary", 
+                                        outline=True,
+                                        className="border-1 bg-transparent",
+                                        )),
+                                    dbc.Col(dbc.Card(
+                                        problemas, 
+                                        color="dark", 
+                                        outline=True,
+                                        className="border-1 bg-transparent",
+                                        )),
+                                    dbc.Col(dbc.Card(
+                                        problemas, 
+                                        color="info", 
+                                        outline=True,
+                                        className="border-1 bg-transparent",                                    
+                                    )),
                                 ],
                                 className="mb-4",
                             ),
                             dbc.Row(
                                 [
-                                    dbc.Col(dbc.Card(problemas, color="success", inverse=True)),
-                                    dbc.Col(dbc.Card(problemas, color="warning", inverse=True)),
-                                    dbc.Col(dbc.Card(problemas, color="danger", inverse=True)),
+                                    dbc.Col(dbc.Card(
+                                        problemas, 
+                                        color="success", 
+                                        outline=True,
+                                        className="border-1 bg-transparent",
+                                        )),
+                                    dbc.Col(dbc.Card(
+                                        problemas, 
+                                        color="warning", 
+                                        outline=True,
+                                        className="border-1 bg-transparent",
+                                        )),
+                                    dbc.Col(dbc.Card(
+                                        problemas, 
+                                        color="danger", 
+                                        outline=True,
+                                        className="border-1 bg-transparent",
+                                        )),                                    
                                 ],
                                 className="mb-4",
                             ),
                         ]
-                    )
-                
+                    )                
                 ),
                 html.Br(),
                 html.Br(),
                 html.Br(),
-                html.Br(),
-                dbc.Col(html.Div(
-                                dcc.Markdown('''
-                                    >
-                                    > 
-                                    > Multiplo es un empresa dedicada a mejorar procesos",
-                                    > mediante la incorporación de *Inteligencia Artificial*",                                    
-                                    > en las tareas de las organizaciones.
-                                    > [Ver nuestra metodología de trabajo](/multiplo)
-                                    >                                    
-                                    '''
-                                ),
-                                style = {
-                                    "font-size": 40,
-                                },
-                            ),
-                            #widht = 10,
-                            align = "center", 
-                        ),          
-                dbc.Row(                                       
-                        children=[
-                            dbc.Col(html.Div(
-                                [
-                                    
-                                    ]
-                                ),
-                                width=4,
-                            ),
-                            dbc.Col(
-                                dbc.Card(
-                                    dbc.CardBody(
-                                        children=[
-                                            dbc.CardHeader("Datos dispersos y heterogéneos"),
-                                            html.P(
-                                                "This is a wider card with supporting text "
-                                                "below as a natural lead-in to additional "
-                                                "content. This content is a bit longer.",                                                    
-                                            ),
-                                        ]
-                                    )
-                                ),
-                            width=8,
-                        ),
-                    ],
-                ),
-                dbc.Row(                                       
-                        children=[
-                            dbc.Col(html.Div(
-                                [
-                                   
-                                    ]
-                                ),
-                                width=4,
-                            ),
-                            dbc.Col(
-                                dbc.Card(
-                                    dbc.CardBody(
-                                        children=[
-                                            dbc.CardHeader("Datos dispersos y heterogéneos"),
-                                            html.P(
-                                                "This is a wider card with supporting text "
-                                                "below as a natural lead-in to additional "
-                                                "content. This content is a bit longer.",                                                    
-                                            ),
-                                        ]
-                                    )
-                                ),
-                            width=8,
-                        ),
-                    ],
-                ),
-            ]),
-        ]
+                html.Br(),                                
+                # Final home ----
+                dbc.Row(
+                    pie,
+                    justify="center",
+                ),                  
+            ]        
+        ),
+    ]
     

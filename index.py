@@ -42,7 +42,7 @@ navbar = dbc.Navbar(
                 # Use row and col to control vertical alignment of logo / brand
                 dbc.Row(
                     [
-                        dbc.Col(html.Img(src=LOGO, height="130px")),
+                        dbc.Col(html.Img(src=LOGO, height="80px")),
                         dbc.Col(dbc.NavbarBrand(
                             "multiplo", 
                             className="ms-2",
