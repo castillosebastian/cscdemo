@@ -114,7 +114,7 @@ def layout():
                                     >
                                     > 
                                     > Multiplo es un empresa dedicada a mejorar procesos
-                                    > aplicando *Inteligencia Artificial* en tareas humanas.
+                                    > aplicando Inteligencia Artificial o IA en tareas humanas.
                                     > [(ver)](/multiplo)
                                     >                                    
                                     '''
@@ -137,7 +137,7 @@ def layout():
                             dbc.Button("Conocer nuestras soluciones", outline=True, color="primary", className="me-1"),
                             dbc.Button("Comunicarse con ventas", outline=True, color="secondary", className="me-1"),
                         ],
-                        className="d-grid gap-2 d-md-block",
+                        className="d-grid gap-2 col-2 mx-auto",
                     )
                 ),                
                 html.Br(),
@@ -147,13 +147,20 @@ def layout():
                 # ML Pipeline ----
                 html.Div(
                     [
-                        dbc.Button("Incoporación de IA en la organización", 
-                        outline=True, 
-                        color="light",
-                        disabled=True,
-                        ),
+                        dbc.Row(
+                                [
+                                    dbc.Col(html.Div("")),
+                                    dbc.Col(html.Div("Incoporación de IA en la organización"),                                        
+                                        style={
+                                            'text-align': 'center',
+                                            "font-size": 30,
+                                        },   
+                                    ),
+                                    dbc.Col(html.Div("")),
+                                ],
+                        )                      
                     ],
-                    className="d-grid gap-2",
+                    #className="d-grid gap-2",
                 ),
                 html.Br(),                
                 dbc.Row(
