@@ -76,7 +76,7 @@ def layout():
                                         class_name="carousel-fade",
                                         controls=True,
                                         indicators=True,
-                                        interval=4000,
+                                        interval=3000,
                                         variant="dark",
                                         #ride="carousel",
                                     )
@@ -126,7 +126,206 @@ def layout():
                 html.Br(),
                 html.Br(),
                 html.Br(),
-                # Presentación ----
+                # ML Pipeline ----
+                dbc.Row(
+                    [
+                        dbc.Col(
+                            dmc.Card(
+                                children=[
+                                    dmc.CardSection(
+                                          gif.GifPlayer(
+                                            gif='assets/liguid1.gif',
+                                            still='assets/liguid1.gif',
+                                            autoplay = True,
+                                            )
+                                    ),
+                                    dmc.Group(
+                                        [
+                                            dmc.Text("Norway Fjord Adventures", weight=500),
+                                            dmc.Badge("On Sale", color="red", variant="light"),
+                                        ],
+                                        position="apart",
+                                        mt="md",
+                                        mb="xs",
+                                    ),
+                                    dmc.Text(
+                                        "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
+                                        size="sm",
+                                        color="dimmed",
+                                    ),
+                                    dmc.Button(
+                                        "Book classic tour now",
+                                        variant="light",
+                                        color="blue",
+                                        fullWidth=True,
+                                        mt="md",
+                                        radius="md",
+                                    ),
+                                ],
+                                withBorder=True,
+                                shadow="sm",
+                                radius="md",
+                                style={"width": 200},
+                            )),
+                            dbc.Col(
+                            dmc.Card(
+                                children=[
+                                    dmc.CardSection(
+                                          gif.GifPlayer(
+                                            gif='assets/liguid2.gif',
+                                            still='assets/liguid2.gif',
+                                            autoplay = True,
+                                            )
+                                    ),
+                                    dmc.Group(
+                                        [
+                                            dmc.Text("Norway Fjord Adventures", weight=500),
+                                            dmc.Badge("On Sale", color="red", variant="light"),
+                                        ],
+                                        position="apart",
+                                        mt="md",
+                                        mb="xs",
+                                    ),
+                                    dmc.Text(
+                                        "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
+                                        size="sm",
+                                        color="dimmed",
+                                    ),
+                                    dmc.Button(
+                                        "Book classic tour now",
+                                        variant="light",
+                                        color="blue",
+                                        fullWidth=True,
+                                        mt="md",
+                                        radius="md",
+                                    ),
+                                ],
+                                withBorder=True,
+                                shadow="sm",
+                                radius="md",
+                                style={"width": 200},                                
+                            )),
+                            dbc.Col(
+                            dmc.Card(
+                                children=[
+                                    dmc.CardSection(
+                                          gif.GifPlayer(
+                                            gif='assets/liguid3.gif',
+                                            still='assets/liguid3.gif',
+                                            autoplay = True,
+                                            )
+                                    ),
+                                    dmc.Group(
+                                        [
+                                            dmc.Text("Norway Fjord Adventures", weight=500),
+                                            dmc.Badge("On Sale", color="red", variant="light"),
+                                        ],
+                                        position="apart",
+                                        mt="md",
+                                        mb="xs",
+                                    ),
+                                    dmc.Text(
+                                        "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
+                                        size="sm",
+                                        color="dimmed",
+                                    ),
+                                    dmc.Button(
+                                        "Book classic tour now",
+                                        variant="light",
+                                        color="blue",
+                                        fullWidth=True,
+                                        mt="md",
+                                        radius="md",
+                                    ),
+                                ],
+                                withBorder=True,
+                                shadow="sm",
+                                radius="md",
+                                style={"width": 200},
+                            )),
+                            dbc.Col(
+                            dmc.Card(
+                                children=[
+                                    dmc.CardSection(
+                                          gif.GifPlayer(
+                                            gif='assets/liguid4.gif',
+                                            still='assets/liguid4.gif',
+                                            autoplay = True,
+                                            )
+                                    ),
+                                    dmc.Group(
+                                        [
+                                            dmc.Text("Norway Fjord Adventures", weight=500),
+                                            dmc.Badge("On Sale", color="red", variant="light"),
+                                        ],
+                                        position="apart",
+                                        mt="md",
+                                        mb="xs",
+                                    ),
+                                    dmc.Text(
+                                        "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
+                                        size="sm",
+                                        color="dimmed",
+                                    ),
+                                    dmc.Button(
+                                        "Book classic tour now",
+                                        variant="light",
+                                        color="blue",
+                                        fullWidth=True,
+                                        mt="md",
+                                        radius="md",
+                                    ),
+                                ],
+                                withBorder=True,
+                                shadow="sm",
+                                radius="md",
+                                style={"width": 200},
+                            )),
+                            dbc.Col(
+                            dmc.Card(
+                                children=[
+                                    dmc.CardSection(
+                                          gif.GifPlayer(
+                                            gif='assets/liguid5.gif',
+                                            still='assets/liguid5.gif',
+                                            autoplay = True,
+                                            )
+                                    ),
+                                    dmc.Group(
+                                        [
+                                            dmc.Text("Norway Fjord Adventures", weight=500),
+                                            dmc.Badge("On Sale", color="red", variant="light"),
+                                        ],
+                                        position="apart",
+                                        mt="md",
+                                        mb="xs",
+                                    ),
+                                    dmc.Text(
+                                        "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
+                                        size="sm",
+                                        color="dimmed",
+                                    ),
+                                    dmc.Button(
+                                        "Book classic tour now",
+                                        variant="light",
+                                        color="blue",
+                                        fullWidth=True,
+                                        mt="md",
+                                        radius="md",
+                                    ),
+                                ],
+                                withBorder=True,
+                                shadow="sm",
+                                radius="md",
+                                style={"width": 200},
+                            )),
+                        
+                          
+                    ]
+                ),
+                html.Br(),
+                html.Br(),
+                # Stages ----
                 dbc.Row(
                     html.Div(
                         [
@@ -181,65 +380,7 @@ def layout():
                 ),
                 html.Br(),
                 html.Br(),
-                dbc.Row(
-                    [
-                        dbc.Col(
-                            dmc.Card(
-                                children=[
-                                    dmc.CardSection(
-                                        dmc.Image(
-                                            src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
-                                            height=160,
-                                        )
-                                    ),
-                                    dmc.Group(
-                                        [
-                                            dmc.Text("Norway Fjord Adventures", weight=500),
-                                            dmc.Badge("On Sale", color="red", variant="light"),
-                                        ],
-                                        position="apart",
-                                        mt="md",
-                                        mb="xs",
-                                    ),
-                                    dmc.Text(
-                                        "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
-                                        size="sm",
-                                        color="dimmed",
-                                    ),
-                                    dmc.Button(
-                                        "Book classic tour now",
-                                        variant="light",
-                                        color="blue",
-                                        fullWidth=True,
-                                        mt="md",
-                                        radius="md",
-                                    ),
-                                ],
-                                withBorder=True,
-                                shadow="sm",
-                                radius="md",
-                                style={"width": 350},
-                            )),
-                        dbc.Col(
-                            html.Div("One of three columns"),
-                            align = "center",
-                            style={'text-align': 'center'},),
-                        dbc.Col(
-                            html.Div("One of three columns"),
-                            align = "center",
-                            style={'text-align': 'center'},),
-                        dbc.Col(
-                            html.Div("One of three columns"),
-                            align = "center",
-                            style={'text-align': 'center'},),
-                        dbc.Col(
-                            html.Div("One of three columns"),
-                            align = "center",
-                            style={'text-align': 'center'},),
-                    ]
-                ),
-                html.Br(),
-                html.Br(),
+                # Last words                
                 dbc.Row(
                     [
                         dbc.Col(html.Div("One of three columns"),
