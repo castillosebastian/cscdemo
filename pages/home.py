@@ -130,7 +130,7 @@ def layout():
                     ],
                     className="d-grid gap-2",
                 ),
-                html.Br(),
+                html.Br(),                
                 dbc.Row(
                     [
                         dbc.Col(
@@ -377,56 +377,182 @@ def layout():
                 ),
                 html.Br(),
                 html.Br(),
+                html.Br(),
+                html.Br(),
                 # Stages ----
                 dbc.Row(
                     html.Div(
-                        [
+                        [                                 
                             dbc.Row(
-                                [
-                                    dbc.Col(dbc.Card(
+                                children=[                                    
+                                    dbc.Col(html.Div(
+                                        dcc.Markdown('''
+                                            >
+                                            > 
+                                            > Multiplo es un empresa dedicada a mejorar procesos
+                                            > aplicando *Inteligencia Artificial* en tareas humanas.
+                                            > [(ver)](/multiplo)
+                                            >                                    
+                                            '''
+                                        ),                                
+                                        style = {
+                                            "font-size": 20,
+                                        },
+                                        ),
+                                        width=4,
+                                        align = "center",
+                                        style={'text-align': 'right'},
+                                    ),
+                                    dbc.Col(
+                                        dbc.Card(
                                         problemas, 
-                                        color="primary", 
-                                        outline=True,
-                                        className="border-1 bg-transparent",
-                                        )),
-                                    dbc.Col(dbc.Card(
-                                        problemas, 
-                                        color="dark", 
-                                        outline=True,
-                                        className="border-1 bg-transparent",
-                                        )),
-                                    dbc.Col(dbc.Card(
-                                        problemas, 
-                                        color="info", 
-                                        outline=True,
-                                        className="border-1 bg-transparent",                                    
-                                    )),
-                                ],
-                                className="mb-4",
-                            ),
+                                        #color="info",  
+                                        #outline=True,
+                                        className="border-0 bg-transparent",
+                                        ),
+                                        width=6,
+                                    ),
+                                ]
+                            ),    
+                            html.Br(),
+                            html.Br(),
+                            html.Br(), 
                             dbc.Row(
-                                [
-                                    dbc.Col(dbc.Card(
+                                children=[                                    
+                                    dbc.Col(html.Div(
+                                        dcc.Markdown('''
+                                            >
+                                            > 
+                                            > Multiplo es un empresa dedicada a mejorar procesos
+                                            > aplicando *Inteligencia Artificial* en tareas humanas.
+                                            > [(ver)](/multiplo)
+                                            >                                    
+                                            '''
+                                        ),                                
+                                        style = {
+                                            "font-size": 20,
+                                        },
+                                        ),
+                                        width=4,
+                                        align = "center",
+                                        style={'text-align': 'right'},
+                                    ),
+                                    dbc.Col(
+                                        dbc.Card(
                                         problemas, 
-                                        color="success", 
-                                        outline=True,
-                                        className="border-1 bg-transparent",
-                                        )),
-                                    dbc.Col(dbc.Card(
+                                        #color="info",  
+                                        #outline=True,
+                                        className="border-0 bg-transparent",
+                                        ),
+                                        width=6,
+                                    ),
+                                ]
+                            ),    
+                            html.Br(),
+                            html.Br(),
+                            html.Br(),
+                            dbc.Row(
+                                children=[                                    
+                                    dbc.Col(html.Div(
+                                        dcc.Markdown('''
+                                            >
+                                            > 
+                                            > Multiplo es un empresa dedicada a mejorar procesos
+                                            > aplicando *Inteligencia Artificial* en tareas humanas.
+                                            > [(ver)](/multiplo)
+                                            >                                    
+                                            '''
+                                        ),                                
+                                        style = {
+                                            "font-size": 20,
+                                        },
+                                        ),
+                                        width=4,
+                                        align = "center",
+                                        style={'text-align': 'right'},
+                                    ),
+                                    dbc.Col(
+                                        dbc.Card(
                                         problemas, 
-                                        color="warning", 
-                                        outline=True,
-                                        className="border-1 bg-transparent",
-                                        )),
-                                    dbc.Col(dbc.Card(
+                                        #color="info",  
+                                        #outline=True,
+                                        className="border-0 bg-transparent",
+                                        ),
+                                        width=6,
+                                    ),
+                                ]
+                            ),    
+                            html.Br(),
+                            html.Br(),
+                            html.Br(), 
+                            dbc.Row(
+                                children=[                                    
+                                    dbc.Col(html.Div(
+                                        dcc.Markdown('''
+                                            >
+                                            > 
+                                            > Multiplo es un empresa dedicada a mejorar procesos
+                                            > aplicando *Inteligencia Artificial* en tareas humanas.
+                                            > [(ver)](/multiplo)
+                                            >                                    
+                                            '''
+                                        ),                                
+                                        style = {
+                                            "font-size": 20,
+                                        },
+                                        ),
+                                        width=4,
+                                        align = "center",
+                                        style={'text-align': 'right'},
+                                    ),
+                                    dbc.Col(
+                                        dbc.Card(
                                         problemas, 
-                                        color="danger", 
-                                        outline=True,
-                                        className="border-1 bg-transparent",
-                                        )),                                    
-                                ],
-                                className="mb-4",
-                            ),
+                                        #color="info",  
+                                        #outline=True,
+                                        className="border-0 bg-transparent",
+                                        ),
+                                        width=6,
+                                    ),
+                                ]
+                            ),    
+                            html.Br(),
+                            html.Br(),
+                            html.Br(),
+                            dbc.Row(
+                                children=[                                    
+                                    dbc.Col(html.Div(
+                                        dcc.Markdown('''
+                                            >
+                                            > 
+                                            > Multiplo es un empresa dedicada a mejorar procesos
+                                            > aplicando *Inteligencia Artificial* en tareas humanas.
+                                            > [(ver)](/multiplo)
+                                            >                                    
+                                            '''
+                                        ),                                
+                                        style = {
+                                            "font-size": 20,
+                                        },
+                                        ),
+                                        width=4,
+                                        align = "center",
+                                        style={'text-align': 'right'},
+                                    ),
+                                    dbc.Col(
+                                        dbc.Card(
+                                        problemas, 
+                                        #color="info",  
+                                        #outline=True,
+                                        className="border-0 bg-transparent",
+                                        ),
+                                        width=6,
+                                    ),
+                                ]
+                            ),    
+                            html.Br(),
+                            html.Br(),
+                            html.Br(),                              
                         ]
                     )                
                 ),
