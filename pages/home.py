@@ -153,15 +153,19 @@ def layout():
                                                 disabled=True,
                                                 ),
                                         ],
-                                        position="apart",
+                                        position="center",
                                         mt="md",
                                         mb="xs",
                                     ),
-                                    dmc.Text(
+                                    dmc.Center(
+                                        children=[
+                                            dmc.Text(
                                         "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
                                         size="sm",
                                         color="dimmed",
-                                    ),
+                                            )
+                                        ]
+                                    ),                                        
                                     #dmc.Button(
                                     #    "Book classic tour now",
                                     #    variant="light",
@@ -197,15 +201,19 @@ def layout():
                                                 disabled=True,
                                                 ),
                                         ],
-                                        position="apart",
+                                        position="center",
                                         mt="md",
                                         mb="xs",
                                     ),
-                                    dmc.Text(
+                                    dmc.Center(
+                                        children=[
+                                            dmc.Text(
                                         "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
                                         size="sm",
                                         color="dimmed",
-                                    ),
+                                            )
+                                        ]
+                                    ),      
                                     #dmc.Button(
                                     #    "Book classic tour now",
                                     #    variant="light",
@@ -241,15 +249,19 @@ def layout():
                                                 disabled=True,
                                                 ),
                                         ],
-                                        position="apart",
+                                        position="center",
                                         mt="md",
                                         mb="xs",
                                     ),
-                                    dmc.Text(
+                                    dmc.Center(
+                                        children=[
+                                            dmc.Text(
                                         "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
                                         size="sm",
                                         color="dimmed",
-                                    ),
+                                            )
+                                        ]
+                                    ),      
                                     #dmc.Button(
                                     #    "Book classic tour now",
                                     #    variant="light",
@@ -285,15 +297,19 @@ def layout():
                                                 disabled=True,
                                                 ),
                                         ],
-                                        position="apart",
+                                        position="center",
                                         mt="md",
                                         mb="xs",
                                     ),
-                                    dmc.Text(
+                                    dmc.Center(
+                                        children=[
+                                            dmc.Text(
                                         "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
                                         size="sm",
                                         color="dimmed",
-                                    ),
+                                            )
+                                        ]
+                                    ),      
                                     #dmc.Button(
                                     #    "Book classic tour now",
                                     #    variant="light",
@@ -329,15 +345,19 @@ def layout():
                                                 disabled=True,
                                                 ),
                                         ],
-                                        position="apart",
+                                        position="center",
                                         mt="md",
                                         mb="xs",
                                     ),
-                                    dmc.Text(
+                                    dmc.Center(
+                                        children=[
+                                            dmc.Text(
                                         "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
                                         size="sm",
                                         color="dimmed",
-                                    ),
+                                            )
+                                        ]
+                                    ),      
                                     #dmc.Button(
                                     #    "Book classic tour now",
                                     #    variant="light",
