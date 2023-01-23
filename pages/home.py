@@ -68,6 +68,7 @@ creditos = [
                 ),       
             ),
         style = {"font-size": 12,},
+        width={"size": 2, "offset": 1},
     )  
 ]
 
@@ -136,7 +137,7 @@ def layout():
                 # ML Pipeline ----
                 html.Div(
                     [
-                        dbc.Button("Pasos de un Proyecto Analítico", 
+                        dbc.Button("Incoporación de IA en la organización", 
                         outline=True, 
                         color="light",
                         disabled=True,
@@ -161,7 +162,7 @@ def layout():
                                         [
                                             #dmc.Text("Norway Fjord Adventures", weight=500),
                                             #dmc.Badge("Integración", color="gray", variant="dark"),
-                                            dbc.Button("Integración", 
+                                            dbc.Button("Acceso a datos", 
                                                 outline=True, 
                                                 color="light",
                                                 disabled=True,
@@ -393,7 +394,7 @@ def layout():
                 html.Br(),
                 html.Br(),
                 html.Br(),
-                # Stages ----
+                # ML Pipelina Detail ----
                 dbc.Row(
                     html.Div(
                         [                                 
@@ -594,12 +595,12 @@ def layout():
                 html.Br(),
                 html.Br(),
                 html.Br(),   
-                # Creditos ----
+                # Credits ----
                  dbc.Row(
                     creditos,                    
                     justify="center",
                 ),                                         
-                # Final home ----
+                # Foot ----
                 dbc.Row(
                     pie,                    
                     justify="center",
