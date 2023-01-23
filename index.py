@@ -18,7 +18,7 @@ CONTENT_STYLE = {
     "padding": "2rem 1rem",
 }
 
-LOGO = app.get_asset_url("logo2.png")
+LOGO = app.get_asset_url("logo0.png")
 
 server = app.server
 

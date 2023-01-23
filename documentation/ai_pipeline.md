@@ -1,36 +1,28 @@
-# Incoporación de IA en la organización
+# Incoporar  IA en la organización
 
-Dicho acceso se puede cumplir a través de dos opciones
+Dicha incorporación se puede cumplir a través de dos caminos
 
-* acceso a las herramientas analíticas de multiplo,
-  * tableros descriptibos
-  * tableros inteligentes
-  * chatbots
-  * 
-* acceso a los modelos finales para incorporlos en herramientas de la organización:
-
-
-
-
-
-Personalización de Servicios
-
-Procesamiento del Lenguaje
-
-Pronóstico y Planificación
-
-Marketing y Ventas
-
-Detección de anomalías
-
-Visión por Computadoras
-
-Fraude y Seguridad
-
-Optimización Discreta
+* accediendo a los productos de Multiplo,
+  * tableros descriptivos,
+  * tableros inteligentes,
+  * APIs de servicios,
+* accediendo a los recursos de Multiplo para incorporlos en herramientas de la organización:
+  * modelos sobre datos tabulares
+  * modelos sobre textos, audios o videos,
+  * chatbost y asistentes, y
+  * tableros
 
 
+Casos de uso / aplicaciones
 
+* Personalización de Servicios
+* Procesamiento de Documentos
+* Procesamiento de Audio y Video
+* Proyección y Planificación
+* Marketing y Ventas
+* Detección de anomalías
+* Finanzas y Contabilidad 
+* Optimización Discreta
 
 
 ## 1. Acceso, consolidación y exploración de datos 
