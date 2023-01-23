@@ -57,6 +57,20 @@ problemas = [
     ),
 ]
 
+creditos = [
+    dbc.Col(
+        html.P(
+                dcc.Markdown('''
+                Credits for animations: 
+                [xponentialdesign](https://giphy.com/xponentialdesign),
+                [Alastair Gray](https://giphy.com/alastairgray")                                                                  
+                '''
+                ),       
+            ),
+        style = {"font-size": 12,},
+    )  
+]
+
 pie = [
     dbc.Col(html.Div("Paraná, Entre Ríos Argentina."), width=2),
     dbc.Col(html.Div("multiplo@algunmail.com"), width=2),
@@ -579,10 +593,15 @@ def layout():
                 html.Br(),
                 html.Br(),
                 html.Br(),
-                html.Br(),                                       
+                html.Br(),   
+                # Creditos ----
+                 dbc.Row(
+                    creditos,                    
+                    justify="center",
+                ),                                         
                 # Final home ----
                 dbc.Row(
-                    pie,
+                    pie,                    
                     justify="center",
                 ),                  
             ]        
