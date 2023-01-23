@@ -129,6 +129,8 @@ def layout():
                     align = "center", 
                     ),                
                 html.Br(),
+                html.Br(),
+                html.Br(),  
                 html.Br(),                
                 # Contacto ----
                 dbc.Row(
@@ -150,7 +152,7 @@ def layout():
                         dbc.Row(
                                 [
                                     dbc.Col(html.Div("")),
-                                    dbc.Col(html.Div("Incoporación de IA en la organización"),                                        
+                                    dbc.Col(html.Div("Incoporar IA en la empresa"),                                        
                                         style={
                                             'text-align': 'center',
                                             "font-size": 30,
@@ -159,10 +161,11 @@ def layout():
                                     dbc.Col(html.Div("")),
                                 ],
                         )                      
-                    ],
-                    #className="d-grid gap-2",
+                    ],                    
                 ),
-                html.Br(),                
+                html.Br(),  
+                html.Br(),
+                html.Br(),              
                 dbc.Row(
                     [
                         dbc.Col(
@@ -173,22 +176,32 @@ def layout():
                                             gif='assets/liguid4.gif',
                                             still='assets/liguid4.gif',
                                             autoplay = True,
-                                            )
-                                    ),                                    
+                                            ),
+                                        id="liq1",
+                                    ),  
+                                    dbc.Tooltip(
+                                            "Puestas en producción de modelos",
+                                            target="liq1",
+                                            placement = "top",
+                                    ),
+                                    html.Br(),                                  
                                     dmc.Group(
                                         [
-                                            #dmc.Text("Norway Fjord Adventures", weight=500),
-                                            #dmc.Badge("Integración", color="gray", variant="dark"),
                                             dbc.Button("Acceso a datos", 
                                                 outline=True, 
                                                 color="light",
-                                                disabled=True,
-                                                ),
+                                                #disabled=True,
+                                            ),
+                                            #dmc.Text("Acceso a Datos",
+                                            #size="lg",
+                                            #color="dimmed",
+                                            #),
                                         ],
                                         position="center",
                                         mt="md",
                                         mb="xs",
                                     ),
+                                    html.Br(), 
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
@@ -221,8 +234,15 @@ def layout():
                                             gif='assets/liguid2.gif',
                                             still='assets/liguid2.gif',
                                             autoplay = True,
-                                            )
+                                            ),
+                                        id="liq2",
                                     ),
+                                    dbc.Tooltip(
+                                            "Puestas en producción de modelos",
+                                            target="liq2",
+                                            placement = "top",
+                                    ),
+                                    html.Br(),
                                     dmc.Group(
                                         [
                                             #dmc.Text("Norway Fjord Adventures", weight=500),
@@ -230,13 +250,14 @@ def layout():
                                             dbc.Button("Integración", 
                                                 outline=True, 
                                                 color="light",
-                                                disabled=True,
-                                                ),
+                                                #disabled=True,
+                                            ),
                                         ],
                                         position="center",
                                         mt="md",
                                         mb="xs",
                                     ),
+                                    html.Br(),
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
@@ -269,8 +290,15 @@ def layout():
                                             gif='assets/liguid5.gif',
                                             still='assets/liguid5.gif',
                                             autoplay = True,
-                                            )
+                                            ),
+                                        id="liq3",
                                     ),
+                                    dbc.Tooltip(
+                                            "Puestas en producción de modelos",
+                                            target="liq3",
+                                            placement = "top",
+                                    ),
+                                    html.Br(),
                                     dmc.Group(
                                         [
                                             #dmc.Text("Norway Fjord Adventures", weight=500),
@@ -278,13 +306,14 @@ def layout():
                                             dbc.Button("Integración", 
                                                 outline=True, 
                                                 color="light",
-                                                disabled=True,
-                                                ),
+                                                #disabled=True,
+                                            ),
                                         ],
                                         position="center",
                                         mt="md",
                                         mb="xs",
                                     ),
+                                    html.Br(),
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
@@ -316,23 +345,31 @@ def layout():
                                           gif.GifPlayer(
                                             gif='assets/liguid3.gif',
                                             still='assets/liguid3.gif',
-                                            autoplay = True,
-                                            )
+                                            autoplay = True,                                            
+                                            ),
+                                        id="liq4",
                                     ),
+                                    dbc.Tooltip(
+                                            "Puestas en producción de modelos",
+                                            target="liq4",
+                                            placement = "top",
+                                    ),
+                                    html.Br(),
                                     dmc.Group(
                                         [
                                             #dmc.Text("Norway Fjord Adventures", weight=500),
                                             #dmc.Badge("Integración", color="gray", variant="dark"),
                                             dbc.Button("Integración", 
-                                                outline=True, 
+                                                outline=True,                                                 
                                                 color="light",
-                                                disabled=True,
-                                                ),
+                                                #disabled=True,
+                                            ),
                                         ],
                                         position="center",
                                         mt="md",
                                         mb="xs",
                                     ),
+                                    html.Br(),                                    
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
@@ -365,8 +402,15 @@ def layout():
                                             gif='assets/liguid1.gif',
                                             still='assets/liguid1.gif',
                                             autoplay = True,
-                                            )
+                                            ),
+                                        id="liq5",
                                     ),
+                                    dbc.Tooltip(
+                                            "Modelos Consolidados",
+                                            target="liq5",
+                                            placement = "top",
+                                    ),
+                                    html.Br(),
                                     dmc.Group(
                                         [
                                             #dmc.Text("Norway Fjord Adventures", weight=500),
@@ -374,13 +418,14 @@ def layout():
                                             dbc.Button("Integración", 
                                                 outline=True, 
                                                 color="light",
-                                                disabled=True,
-                                                ),
+                                                #disabled=True,
+                                            ),
                                         ],
                                         position="center",
                                         mt="md",
                                         mb="xs",
                                     ),
+                                    html.Br(),
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
