@@ -96,7 +96,7 @@ def layout():
                                             variant="dark",                                            
                                             #ride="carousel",
                                             style={                                                
-                                                "border-radius": "100px",
+                                                "border-radius": "400px",
                                                 "background-color": "rgba(0,0,0,0)",
                                                 "overflow": "hidden",                                                
                                             }
