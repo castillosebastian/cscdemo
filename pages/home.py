@@ -146,7 +146,7 @@ def layout():
                 html.Br(),
                 html.Br(),
                 html.Br(),
-                # ML Pipeline ----
+                # ML Title ----
                 html.Div(
                     [
                         dbc.Row(
@@ -180,14 +180,14 @@ def layout():
                                         id="liq1",
                                     ),  
                                     dbc.Tooltip(
-                                            "Puestas en producción de modelos",
+                                            "Datos en distintos soportes y formatos: planillas de cálculo, documentos, BDs, etc.",
                                             target="liq1",
                                             placement = "top",
                                     ),
                                     html.Br(),                                  
                                     dmc.Group(
                                         [
-                                            dbc.Button("Acceso a datos", 
+                                            dbc.Button("Acceso a Datos", 
                                                 outline=True, 
                                                 color="light",
                                                 #disabled=True,
@@ -226,7 +226,7 @@ def layout():
                                 #style={"width": 200},
                                 className="border-1 bg-transparent",
                             )),
-                            dbc.Col(
+                        dbc.Col(
                             dmc.Card(
                                 children=[
                                     dmc.CardSection(
@@ -238,7 +238,7 @@ def layout():
                                         id="liq2",
                                     ),
                                     dbc.Tooltip(
-                                            "Puestas en producción de modelos",
+                                            "Generación de nuevos datos: relaciones, patrones y tendencias",
                                             target="liq2",
                                             placement = "top",
                                     ),
@@ -247,7 +247,7 @@ def layout():
                                         [
                                             #dmc.Text("Norway Fjord Adventures", weight=500),
                                             #dmc.Badge("Integración", color="gray", variant="dark"),
-                                            dbc.Button("Integración", 
+                                            dbc.Button("Transformación de Datos", 
                                                 outline=True, 
                                                 color="light",
                                                 #disabled=True,
@@ -261,9 +261,9 @@ def layout():
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
-                                        "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
-                                        size="sm",
-                                        color="dimmed",
+                                                "La etapa anterior conduce naturalmente a transformar y crar nuevos datos que nos aporten información más valiosa para resolver los problemas o preguntas del proyecto. Conocida como *ingeniería de atributos* esta etapa es dasafiante pues requiere rigor en el estudio de los datos (generalmente en grandes volúmenes) y, al mismo tiempo, agudeza y creatividad para buscar relaciones, patrones y tendencias en ellos. ",
+                                                size="sm",
+                                                color="dimmed",
                                             )
                                         ]
                                     ),      
@@ -303,7 +303,7 @@ def layout():
                                         [
                                             #dmc.Text("Norway Fjord Adventures", weight=500),
                                             #dmc.Badge("Integración", color="gray", variant="dark"),
-                                            dbc.Button("Integración", 
+                                            dbc.Button("Generación de Modelos", 
                                                 outline=True, 
                                                 color="light",
                                                 #disabled=True,
@@ -359,7 +359,7 @@ def layout():
                                         [
                                             #dmc.Text("Norway Fjord Adventures", weight=500),
                                             #dmc.Badge("Integración", color="gray", variant="dark"),
-                                            dbc.Button("Integración", 
+                                            dbc.Button("Puesta en Producción", 
                                                 outline=True,                                                 
                                                 color="light",
                                                 #disabled=True,
@@ -415,7 +415,7 @@ def layout():
                                         [
                                             #dmc.Text("Norway Fjord Adventures", weight=500),
                                             #dmc.Badge("Integración", color="gray", variant="dark"),
-                                            dbc.Button("Integración", 
+                                            dbc.Button("Monitoreo y Mejora", 
                                                 outline=True, 
                                                 color="light",
                                                 #disabled=True,
