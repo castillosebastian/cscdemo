@@ -83,7 +83,7 @@ def layout():
     return [
         html.Div(            
             [   
-                # Carrusel y primera frase ----
+                # Carrusel, primera frase y Contacto----
                 dbc.Row(                                       
                         children=[
                             dbc.Col(html.Div(
@@ -117,14 +117,24 @@ def layout():
                                         "Multiplo es un empresa dedicada a mejorar procesos empresariales aplicando Inteligencia Artificial (IA). De datos caóticos a nuevos productos, brindamos herramientas avanzadas para mejorar los márgenes y la rentabilidad del negocio.",
                                         variant="gradient",
                                         gradient={"from": "skyblue", "to": "fuchsia", "deg": 100},
-                                        style={"fontSize": 40},
+                                        style={"fontSize": 30},
                                     ),
+                                    html.Br(),
                                     html.Br(),
                                     dmc.Text(
                                         "¿Tenes datos? Multiplo se ocupa del conocimiento.",                                        
                                         color="gray",
-                                        style={"fontSize": 30},
+                                        style={"fontSize": 20},                                    
                                     ),
+                                    html.Br(),
+                                    html.Br(),
+                                    html.Div(
+                                        [
+                                            dbc.Button("Conocer nuestras soluciones", outline=True, color="primary", className="me-md-2"),
+                                            dbc.Button("Comunicarse con ventas", outline=True, color="secondary", className="me-md-2"),
+                                        ],
+                                        #className="d-grid gap-2 col-6 mx-auto lg-1",                        
+                                    )
                                 ]                                
                                 #dcc.Markdown('''                                    
                                 #    > Multiplo es un empresa dedicada a mejorar procesos
@@ -143,20 +153,10 @@ def layout():
                 html.Br(),
                 html.Br(),
                 html.Br(),  
-                html.Br(),                
-                # Contacto ----
-                dbc.Row(
-                    html.Div(
-                        [
-                            dbc.Button("Conocer nuestras soluciones", outline=True, color="primary"),
-                            dbc.Button("Comunicarse con ventas", outline=True, color="secondary"),
-                        ],
-                        className="d-grid gap-2 col-2 mx-auto lg-1",                        
-                    )
-                ),                
+                html.Br(),  
                 html.Br(),
-                html.Br(),
-                html.Br(),               
+                html.Br(),  
+                html.Br(),   
                 # ML Title ----
                 html.Div(
                     [
@@ -171,11 +171,11 @@ def layout():
                                                 "Multiplo te acompaña para incoporar IA en la empresa",
                                                 variant="gradient",
                                                 gradient={"from": "fuchsia", "to": "skyblue", "deg": 100},
-                                                style={"fontSize": 40},
+                                                style={"fontSize": 30},
                                             ),
                                             html.Br(),
                                             dmc.Text(
-                                                "En este proyeto cada etapa es una unidad que genera resultados de valor",                                        
+                                                "En ese proyeto cada etapa es una unidad que genera resultados valiosos para la organización",                                        
                                                 color="gray",
                                                 style={"fontSize": 20},
                                             ),
@@ -193,8 +193,8 @@ def layout():
                     ],                    
                 ),
                 html.Br(),  
-                html.Br(),
                 html.Br(), 
+                html.Br(),                 
                 # ML Pipeline Graph             
                 dbc.Row(
                     [
@@ -217,11 +217,15 @@ def layout():
                                     html.Br(),                                  
                                     dmc.Group(
                                         [
-                                            dmc.Badge("Inicio", variant="gradient"),
+                                            dmc.Badge(
+                                                "Inicio", 
+                                                variant="gradient",
+                                                gradient={"from": "grape", "to": "pink", "deg": 35},
+                                            ),
                                             dbc.Button("1. Acceso a Datos", 
                                                 outline=True, 
                                                 color="light",
-                                                size="lg",
+                                                size="md",
                                                 #disabled=True,
                                             ),
                                             #dmc.Text("Acceso a Datos",
@@ -237,7 +241,7 @@ def layout():
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
-                                                "A partir de los objetivos de la organización se inicia un proyecto de implementación de IA identificando la información disponible y su estado.",
+                                                "A partir de los objetivos de la organización se inicia un proyecto de implementación de IA identificando el estado tecnológico de la empresa y la información disponible.",
                                                 size="lg",
                                                 color="dimmed",
                                             )
@@ -294,7 +298,7 @@ def layout():
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
-                                                "De los datos disponible inferimos patrones y relaciones que permitirán modelar el problema en estudio y crear soluciones novedosas.",
+                                                "Con los datos disponible investigamos patrones y relaciones que permitirán modelar el problema en estudio y crear soluciones novedosas.",
                                                 size="lg",
                                                 color="dimmed",
                                             )
@@ -351,7 +355,7 @@ def layout():
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
-                                                "Empleando aprendizaje automático (algorítimico) y optimización se aislan las soluciones más efectivas y redituables para la organización.",
+                                                "Empleando aprendizaje automático (algorítimico) y optimización se aislan las soluciones más efectivas y redituables para la organización, generando una síntesis con los modelos más valiosos.",
                                                 size="lg",
                                                 color="dimmed",
                                             )
@@ -408,7 +412,7 @@ def layout():
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
-                                                "Creamos el contexto tecnológico necesario para aplicar las soluciones y modelos generados al trabajo cotidiano de la empresa.",
+                                                "Generamos la infraestructura tecnológica necesaria para aplicar las soluciones y modelos creados al trabajo cotidiano de la empresa. El foco está puesto en la robustez y usabilidad.",
                                                 size="lg",
                                                 color="dimmed",
                                             )
@@ -450,13 +454,17 @@ def layout():
                                             [
                                                 #dmc.Text("Norway Fjord Adventures", weight=500),
                                                 #dmc.Badge("Integración", color="gray", variant="dark"),
-                                                dbc.Button("5. Control y Mejora", 
+                                                dbc.Button("5.Control y Mejora", 
                                                     outline=True, 
                                                     color="light",
-                                                    size="lg",
+                                                    size="md",
                                                     #disabled=True,
                                                 ),
-                                                dmc.Badge("Fin", variant="gradient"),
+                                                 dmc.Badge(
+                                                    "Fin", 
+                                                    variant="gradient",
+                                                    gradient={"from": "grape", "to": "pink", "deg": 35},
+                                                ),
                                             ],
                                             position="center",
                                             mt="md",
@@ -466,7 +474,7 @@ def layout():
                                         dmc.Center(
                                             children=[
                                                 dmc.Text(
-                                                    "Supervisamos el desempeño de los modelos, verificando la conformidad de sus resultados a los objetivos y criterios de la empresa.",
+                                                    "Controlamos el desempeño de los modelos, verificando su conformidad a los objetivos y política de la empresa, buscando oportunidades de mejorar los resultados.",
                                                     size="lg",
                                                     color="dimmed",
                                                 )
