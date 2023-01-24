@@ -34,6 +34,14 @@ tooltip = {
     5:"Mejoras y desarrollo de herramientas",
 }    
 
+etapasIA = {
+    1:"A partir de los objetivos de la organización se inicia un proyecto de implementación de IA identificando el estado tecnológico de la empresa y la información disponible.",
+    2:"Con los datos disponible investigamos patrones y relaciones que permitirán modelar el problema atacado y crear soluciones novedosas.",    
+    3:"Empleando IA se aislan las soluciones más efectivas, optimizando su configuración hasta lograr los estándares fijados por la empresa.",
+    4:"Generamos la infraestructura tecnológica necesaria para aplicar las soluciones creadas a las tareas cotidianas de la empresa. El foco está puesto en la robustez y usabilidad.",
+    5:"Controlamos el desempeño de los modelos, verificando su conformidad a los objetivos de la empresa, buscando oportunidades de mejorar sus resultados.",
+}
+
 problemas = [
     dbc.CardHeader("Card header"),
     dbc.CardBody(
@@ -84,6 +92,13 @@ pie = [
     dbc.Col(html.Div("Paraná, Entre Ríos Argentina."), width=2),
     dbc.Col(html.Div("multiplo@algunmail.com"), width=2),
 ]
+
+images = [
+  dmc.Image(radius="sm", src= app.get_asset_url("csv_file.png")),
+  dmc.Image(radius="sm", src='https://images.unsplash.com/photo-1444723121867-7a241cacace9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=250&q=80'),
+  dmc.Image(radius="sm", src='https://images.unsplash.com/photo-1444084316824-dc26d6657664?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=250&q=80'),
+]
+
 
 size_texto_cuerpo = 20
 
@@ -232,7 +247,7 @@ def layout():
                                                 color="info",
                                                 size="lg",                                                
                                                 #disabled=True,
-                                            ),
+                                            ),                                             
                                             #dmc.Text("Acceso a Datos",
                                             #size="lg",
                                             #color="dimmed",
@@ -246,7 +261,7 @@ def layout():
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
-                                                "A partir de los objetivos de la organización se inicia un proyecto de implementación de IA identificando el estado tecnológico de la empresa y la información disponible.",
+                                                etapasIA[1],
                                                 size="lg",
                                                 color="dimmed",
                                             )
@@ -302,7 +317,7 @@ def layout():
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
-                                                "Con los datos disponible investigamos patrones y relaciones que permitirán modelar el problema atacado y crear soluciones novedosas.",
+                                                etapasIA[2],
                                                 size="lg",
                                                 color="dimmed",
                                             )
@@ -358,7 +373,7 @@ def layout():
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
-                                                "Empleando IA se aislan las soluciones más efectivas, optimizando su configuración hasta lograr los estándares fijados por la empresa.",
+                                                etapasIA[3],
                                                 size="lg",
                                                 color="dimmed",
                                             )
@@ -414,7 +429,7 @@ def layout():
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
-                                                "Generamos la infraestructura tecnológica necesaria para aplicar las soluciones creadas a las tareas cotidianas de la empresa. El foco está puesto en la robustez y usabilidad.",
+                                                etapasIA[4],
                                                 size="lg",
                                                 color="dimmed",
                                             )
@@ -475,7 +490,7 @@ def layout():
                                         dmc.Center(
                                             children=[
                                                 dmc.Text(
-                                                    "Controlamos el desempeño de los modelos, verificando su conformidad a los objetivos de la empresa, buscando oportunidades de mejorar sus resultados.",
+                                                    etapasIA[5],
                                                     size="lg",
                                                     color="dimmed",
                                                 )
@@ -508,31 +523,65 @@ def layout():
                         [                                 
                             dbc.Row(
                                 children=[                                    
-                                    dbc.Col(html.Div(
-                                        dcc.Markdown('''
-                                            >
-                                            > 
-                                            > Multiplo es un empresa dedicada a mejorar procesos
-                                            > aplicando *Inteligencia Artificial* en tareas humanas.
-                                            > [(ver)](/multiplo)
-                                            >                                    
-                                            '''
-                                        ),                                
-                                        style = {
-                                            "font-size": 20,
-                                        },
+                                    dbc.Col(html.Div(                                        
+                                                dmc.Text(
+                                                "Multiplo es un empresa dedicada a mejorar procesos empresariales aplicando Inteligencia Artificial (IA). De datos caóticos a nuevos productos, brindamos sistemas avanzados para mejorar los márgenes y la rentabilidad del negocio.",
+                                                variant="gradient",
+                                                gradient={"from": "skyblue", "to": "fuchsia", "deg": 100},
+                                                style={"fontSize": 30},
+                                            ),                                       
                                         ),
                                         width=4,
                                         align = "center",
                                         style={'text-align': 'right'},
                                     ),
                                     dbc.Col(
-                                        dbc.Card(
-                                        problemas, 
-                                        #color="info",  
-                                        #outline=True,
-                                        className="border-0 bg-transparent",
-                                        ),
+                                        dmc.Card(
+                                                children=[
+                                                    dmc.CardSection(
+                                                        dmc.Group(
+                                                            children=[
+                                                                dmc.Text("Review Pictures", weight=500),                                                                
+                                                            ],
+                                                            position="apart",
+                                                        ),
+                                                        withBorder=True,
+                                                        inheritPadding=True,
+                                                        py="xs",
+                                                    ),
+                                                    dmc.Text(
+                                                        children=[
+                                                            dmc.Text(
+                                                                "200+ images uploaded",
+                                                                color="blue",
+                                                                style={"display": "inline"},
+                                                            ),
+                                                            " since last visit, review them to select which one should be added to your gallery",
+                                                        ],
+                                                        mt="sm",
+                                                        color="dimmed",
+                                                        size="sm",
+                                                    ),
+                                                    dmc.CardSection(
+                                                        dmc.Image(
+                                                            src=app.get_asset_url("csv_file.png"),
+                                                            mt="sm",
+                                                        ),
+                                                    ),
+                                                    dmc.CardSection(
+                                                        children=[
+                                                            dmc.SimpleGrid(cols=3, children=[i for i in images]),
+                                                        ],
+                                                        inheritPadding=True,
+                                                        mt="sm",
+                                                        pb="md",
+                                                    ),
+                                                ],
+                                                withBorder=True,
+                                                shadow="sm",
+                                                radius="md",
+                                                style={"width": 350},
+                                            ),
                                         width=8,
                                     ),
                                 ]
