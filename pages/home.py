@@ -77,6 +77,8 @@ pie = [
     dbc.Col(html.Div("multiplo@algunmail.com"), width=2),
 ]
 
+size_texto_cuerpo = 20
+
 def layout():
     return [
         html.Div(            
@@ -110,18 +112,28 @@ def layout():
                             width=6,                             
                             ),
                             dbc.Col(html.Div(
-                                dcc.Markdown('''
-                                    >
-                                    > 
-                                    > Multiplo es un empresa dedicada a mejorar procesos
-                                    > aplicando Inteligencia Artificial o IA en tareas humanas.
-                                    > [(ver)](/multiplo)
-                                    >                                    
-                                    '''
-                                ),                                
-                                style = {
-                                    "font-size": 30,
-                                },
+                                children=[
+                                    dmc.Text(
+                                        "Multiplo es un empresa dedicada a mejorar procesos empresariales aplicando Inteligencia Artificial (IA). De datos caóticos a nuevos productos, brindamos herramientas avanzadas para mejorar los márgenes y la rentabilidad del negocio.",
+                                        variant="gradient",
+                                        gradient={"from": "skyblue", "to": "fuchsia", "deg": 100},
+                                        style={"fontSize": 40},
+                                    ),
+                                    html.Br(),
+                                    dmc.Text(
+                                        "¿Tenes datos? Multiplo se ocupa del conocimiento.",                                        
+                                        color="gray",
+                                        style={"fontSize": 30},
+                                    ),
+                                ]                                
+                                #dcc.Markdown('''                                    
+                                #    > Multiplo es un empresa dedicada a mejorar procesos
+                                #    > aplicando Inteligencia Artificial **(IA)** en tareas humanas.                                                   
+                                #    '''
+                                #    ),                                
+                                #style = {
+                                #    "font-size": 30,
+                                #},
                             ),
                             width=6,
                         )
@@ -136,36 +148,54 @@ def layout():
                 dbc.Row(
                     html.Div(
                         [
-                            dbc.Button("Conocer nuestras soluciones", outline=True, color="primary", className="me-1"),
-                            dbc.Button("Comunicarse con ventas", outline=True, color="secondary", className="me-1"),
+                            dbc.Button("Conocer nuestras soluciones", outline=True, color="primary"),
+                            dbc.Button("Comunicarse con ventas", outline=True, color="secondary"),
                         ],
-                        className="d-grid gap-2 col-2 mx-auto",
+                        className="d-grid gap-2 col-2 mx-auto lg-1",                        
                     )
                 ),                
                 html.Br(),
                 html.Br(),
-                html.Br(),
-                html.Br(),
+                html.Br(),               
                 # ML Title ----
                 html.Div(
                     [
                         dbc.Row(
                                 [
-                                    dbc.Col(html.Div("")),
-                                    dbc.Col(html.Div("Incoporar IA en la empresa"),                                        
-                                        style={
-                                            'text-align': 'center',
-                                            "font-size": 30,
-                                        },   
+                                    dbc.Col(html.Div(""),
+                                    width=2,
                                     ),
-                                    dbc.Col(html.Div("")),
+                                    dbc.Col(html.Div(
+                                        children=[
+                                            dmc.Text(
+                                                "Multiplo te acompaña para incoporar IA en la empresa",
+                                                variant="gradient",
+                                                gradient={"from": "fuchsia", "to": "skyblue", "deg": 100},
+                                                style={"fontSize": 40},
+                                            ),
+                                            html.Br(),
+                                            dmc.Text(
+                                                "En este proyeto cada etapa es una unidad que genera resultados de valor",                                        
+                                                color="gray",
+                                                style={"fontSize": 20},
+                                            ),
+                                        ]),                                        
+                                        style={
+                                            'text-align': 'center',                                            
+                                        }, 
+                                        width=8,  
+                                    ),
+                                    dbc.Col(html.Div(""),
+                                     width=2,
+                                    ),
                                 ],
                         )                      
                     ],                    
                 ),
                 html.Br(),  
                 html.Br(),
-                html.Br(),              
+                html.Br(), 
+                # ML Pipeline Graph             
                 dbc.Row(
                     [
                         dbc.Col(
@@ -180,16 +210,18 @@ def layout():
                                         id="liq1",
                                     ),  
                                     dbc.Tooltip(
-                                            "Datos en distintos soportes y formatos: planillas de cálculo, documentos, BDs, etc.",
+                                            "Planillas, documentos, BDs, otras fuentes",
                                             target="liq1",
                                             placement = "top",
                                     ),
                                     html.Br(),                                  
                                     dmc.Group(
                                         [
-                                            dbc.Button("Acceso a Datos", 
+                                            dmc.Badge("Inicio", variant="gradient"),
+                                            dbc.Button("1. Acceso a Datos", 
                                                 outline=True, 
                                                 color="light",
+                                                size="lg",
                                                 #disabled=True,
                                             ),
                                             #dmc.Text("Acceso a Datos",
@@ -205,9 +237,9 @@ def layout():
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
-                                        "A partir de las prioridades y objetivos de la organización al incorporar Inteligencia Artificial a sus procesos, se inicia un proyecto de implementación reuniendo a los responsables internos con el equipo de Multiplo para identificar información disponible, su estado y atributos.",
-                                        size="sm",
-                                        color="dimmed",
+                                                "A partir de los objetivos de la organización se inicia un proyecto de implementación de IA identificando la información disponible y su estado.",
+                                                size="lg",
+                                                color="dimmed",
                                             )
                                         ]
                                     ),                                        
@@ -238,7 +270,7 @@ def layout():
                                         id="liq2",
                                     ),
                                     dbc.Tooltip(
-                                            "Generación de nuevos datos: relaciones, patrones y tendencias",
+                                            "Nuevos datos, relaciones, patrones y tendencias",
                                             target="liq2",
                                             placement = "top",
                                     ),
@@ -247,9 +279,10 @@ def layout():
                                         [
                                             #dmc.Text("Norway Fjord Adventures", weight=500),
                                             #dmc.Badge("Integración", color="gray", variant="dark"),
-                                            dbc.Button("Transformación de Datos", 
+                                            dbc.Button("2. Ingeniería de Datos", 
                                                 outline=True, 
                                                 color="light",
+                                                size="lg",
                                                 #disabled=True,
                                             ),
                                         ],
@@ -261,8 +294,8 @@ def layout():
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
-                                                "La etapa anterior conduce naturalmente a transformar y crar nuevos datos que nos aporten información más valiosa para resolver los problemas o preguntas del proyecto. Conocida como *ingeniería de atributos* esta etapa es dasafiante pues requiere rigor en el estudio de los datos (generalmente en grandes volúmenes) y, al mismo tiempo, agudeza y creatividad para buscar relaciones, patrones y tendencias en ellos. ",
-                                                size="sm",
+                                                "De los datos disponible inferimos patrones y relaciones que permitirán modelar el problema en estudio y crear soluciones novedosas.",
+                                                size="lg",
                                                 color="dimmed",
                                             )
                                         ]
@@ -282,7 +315,7 @@ def layout():
                                 #style={"width": 200},
                                 className="border-1 bg-transparent",                                
                             )),
-                            dbc.Col(
+                        dbc.Col(
                             dmc.Card(
                                 children=[
                                     dmc.CardSection(
@@ -294,7 +327,7 @@ def layout():
                                         id="liq3",
                                     ),
                                     dbc.Tooltip(
-                                            "Puestas en producción de modelos",
+                                            "Modelos, proyecciones y predicciones",
                                             target="liq3",
                                             placement = "top",
                                     ),
@@ -303,9 +336,10 @@ def layout():
                                         [
                                             #dmc.Text("Norway Fjord Adventures", weight=500),
                                             #dmc.Badge("Integración", color="gray", variant="dark"),
-                                            dbc.Button("Generación de Modelos", 
+                                            dbc.Button("3. Generación de Modelos", 
                                                 outline=True, 
                                                 color="light",
+                                                size="lg",
                                                 #disabled=True,
                                             ),
                                         ],
@@ -317,9 +351,9 @@ def layout():
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
-                                        "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
-                                        size="sm",
-                                        color="dimmed",
+                                                "Empleando aprendizaje automático (algorítimico) y optimización se aislan las soluciones más efectivas y redituables para la organización.",
+                                                size="lg",
+                                                color="dimmed",
                                             )
                                         ]
                                     ),      
@@ -338,7 +372,7 @@ def layout():
                                 #style={"width": 200},
                                 className="border-1 bg-transparent",
                             )),
-                            dbc.Col(
+                        dbc.Col(
                             dmc.Card(
                                 children=[
                                     dmc.CardSection(
@@ -350,7 +384,7 @@ def layout():
                                         id="liq4",
                                     ),
                                     dbc.Tooltip(
-                                            "Puestas en producción de modelos",
+                                            "Aplicación Web para consulta, APIs, Reportes, otros",
                                             target="liq4",
                                             placement = "top",
                                     ),
@@ -359,9 +393,10 @@ def layout():
                                         [
                                             #dmc.Text("Norway Fjord Adventures", weight=500),
                                             #dmc.Badge("Integración", color="gray", variant="dark"),
-                                            dbc.Button("Puesta en Producción", 
+                                            dbc.Button("4. Puesta en Producción", 
                                                 outline=True,                                                 
                                                 color="light",
+                                                size="lg",
                                                 #disabled=True,
                                             ),
                                         ],
@@ -373,9 +408,9 @@ def layout():
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
-                                        "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
-                                        size="sm",
-                                        color="dimmed",
+                                                "Creamos el contexto tecnológico necesario para aplicar las soluciones y modelos generados al trabajo cotidiano de la empresa.",
+                                                size="lg",
+                                                color="dimmed",
                                             )
                                         ]
                                     ),      
@@ -394,62 +429,64 @@ def layout():
                                 #style={"width": 200},
                                 className="border-1 bg-transparent",
                             )),
-                            dbc.Col(
-                            dmc.Card(
-                                children=[
-                                    dmc.CardSection(
-                                          gif.GifPlayer(
-                                            gif='assets/liguid1.gif',
-                                            still='assets/liguid1.gif',
-                                            autoplay = True,
-                                            ),
-                                        id="liq5",
-                                    ),
-                                    dbc.Tooltip(
-                                            "Modelos Consolidados",
-                                            target="liq5",
-                                            placement = "top",
-                                    ),
-                                    html.Br(),
-                                    dmc.Group(
-                                        [
-                                            #dmc.Text("Norway Fjord Adventures", weight=500),
-                                            #dmc.Badge("Integración", color="gray", variant="dark"),
-                                            dbc.Button("Monitoreo y Mejora", 
-                                                outline=True, 
-                                                color="light",
-                                                #disabled=True,
-                                            ),
-                                        ],
-                                        position="center",
-                                        mt="md",
-                                        mb="xs",
-                                    ),
-                                    html.Br(),
-                                    dmc.Center(
-                                        children=[
-                                            dmc.Text(
-                                        "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
-                                        size="sm",
-                                        color="dimmed",
-                                            )
-                                        ]
-                                    ),      
-                                    #dmc.Button(
-                                    #    "Book classic tour now",
-                                    #    variant="light",
-                                    #    color="blue",
-                                    #    fullWidth=True,
-                                    #    mt="md",
-                                    #    radius="md",
-                                    #),
-                                ],
-                                #withBorder=True,                                
-                                #shadow="sm",
-                                radius="md",
-                                #style={"width": 200},
-                                className="border-1 bg-transparent",                                
-                            )),
+                        dbc.Col(
+                                dmc.Card(
+                                    children=[
+                                        dmc.CardSection(
+                                            gif.GifPlayer(
+                                                gif='assets/liguid1.gif',
+                                                still='assets/liguid1.gif',
+                                                autoplay = True,
+                                                ),
+                                            id="liq5",
+                                        ),
+                                        dbc.Tooltip(
+                                                "Incoporación de mejoras y desarrollo de herramientas",
+                                                target="liq5",
+                                                placement = "top",
+                                        ),
+                                        html.Br(),
+                                        dmc.Group(
+                                            [
+                                                #dmc.Text("Norway Fjord Adventures", weight=500),
+                                                #dmc.Badge("Integración", color="gray", variant="dark"),
+                                                dbc.Button("5. Control y Mejora", 
+                                                    outline=True, 
+                                                    color="light",
+                                                    size="lg",
+                                                    #disabled=True,
+                                                ),
+                                                dmc.Badge("Fin", variant="gradient"),
+                                            ],
+                                            position="center",
+                                            mt="md",
+                                            mb="xs",
+                                        ),
+                                        html.Br(),
+                                        dmc.Center(
+                                            children=[
+                                                dmc.Text(
+                                                    "Supervisamos el desempeño de los modelos, verificando la conformidad de sus resultados a los objetivos y criterios de la empresa.",
+                                                    size="lg",
+                                                    color="dimmed",
+                                                )
+                                            ]
+                                        ),      
+                                        #dmc.Button(
+                                        #    "Book classic tour now",
+                                        #    variant="light",
+                                        #    color="blue",
+                                        #    fullWidth=True,
+                                        #    mt="md",
+                                        #    radius="md",
+                                        #),
+                                    ],
+                                    #withBorder=True,                                
+                                    #shadow="sm",
+                                    radius="md",
+                                    #style={"width": 200},
+                                    className="border-1 bg-transparent",                                
+                                )),
                     ]
                 ),
                 html.Br(),
