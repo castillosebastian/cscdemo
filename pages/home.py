@@ -26,13 +26,13 @@ carrusel = [
     {"key": "3", "src": "/assets/im3_3_edited.png"},    
     ]
 
-card_icon = {
-    "color": "white",
-    "textAlign": "center",
-    "fontSize": 30,
-    "margin": "auto",
-}
-
+tooltip = {
+    1:"Planillas, documentos, BDs, otras fuentes",
+    2:"Nuevos datos, relaciones, patrones y tendencias",
+    3:"Modelos, proyecciones y predicciones",
+    4:"Aplicación Web, APIs, Reportes, otros",
+    5:"Mejoras y desarrollo de herramientas",
+}    
 
 problemas = [
     dbc.CardHeader("Card header"),
@@ -215,7 +215,7 @@ def layout():
                                         id="liq1",
                                     ),  
                                     dbc.Tooltip(
-                                            "Planillas, documentos, BDs, otras fuentes",
+                                            tooltip[1],
                                             target="liq1",
                                             placement = "top",
                                     ),
@@ -227,10 +227,10 @@ def layout():
                                                 variant="gradient",
                                                 gradient={"from": "grape", "to": "pink", "deg": 35},
                                             ),
-                                            dbc.Button("1. Acceso a Datos", 
+                                            dbc.Button("1. Acceso", 
                                                 outline=True, 
                                                 color="info",
-                                                size="md",                                                
+                                                size="lg",                                                
                                                 #disabled=True,
                                             ),
                                             #dmc.Text("Acceso a Datos",
@@ -278,7 +278,7 @@ def layout():
                                         id="liq2",
                                     ),
                                     dbc.Tooltip(
-                                            "Nuevos datos, relaciones, patrones y tendencias",
+                                            tooltip[2],
                                             target="liq2",
                                             placement = "top",
                                     ),
@@ -287,7 +287,7 @@ def layout():
                                         [
                                             #dmc.Text("Norway Fjord Adventures", weight=500),
                                             #dmc.Badge("Integración", color="gray", variant="dark"),
-                                            dbc.Button("2. Ingeniería de Datos", 
+                                            dbc.Button("2. Transformación", 
                                                 outline=True, 
                                                 color="info",
                                                 size="lg",
@@ -302,7 +302,7 @@ def layout():
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
-                                                "Con los datos disponible investigamos patrones y relaciones que permitirán modelar el problema en estudio y crear soluciones novedosas.",
+                                                "Con los datos disponible investigamos patrones y relaciones que permitirán modelar el problema atacado y crear soluciones novedosas.",
                                                 size="lg",
                                                 color="dimmed",
                                             )
@@ -334,7 +334,7 @@ def layout():
                                         id="liq3",
                                     ),
                                     dbc.Tooltip(
-                                            "Modelos, proyecciones y predicciones",
+                                            tooltip[3],
                                             target="liq3",
                                             placement = "top",
                                     ),
@@ -343,7 +343,7 @@ def layout():
                                         [
                                             #dmc.Text("Norway Fjord Adventures", weight=500),
                                             #dmc.Badge("Integración", color="gray", variant="dark"),
-                                            dbc.Button("3. Generar Modelos", 
+                                            dbc.Button("3. Generación", 
                                                 outline=True, 
                                                 color="info",
                                                 size="lg",
@@ -358,7 +358,7 @@ def layout():
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
-                                                "Empleando aprendizaje automático (algorítimico) y optimización se aislan las soluciones más efectivas y redituables para la organización, generando una síntesis con los modelos más valiosos.",
+                                                "Empleando IA se aislan las soluciones más efectivas, optimizando su configuración hasta lograr los estándares fijados por la empresa.",
                                                 size="lg",
                                                 color="dimmed",
                                             )
@@ -390,7 +390,7 @@ def layout():
                                         id="liq4",
                                     ),
                                     dbc.Tooltip(
-                                            "Aplicación Web, APIs, Reportes, otros",
+                                            tooltip[4],
                                             target="liq4",
                                             placement = "top",
                                     ),
@@ -399,7 +399,7 @@ def layout():
                                         [
                                             #dmc.Text("Norway Fjord Adventures", weight=500),
                                             #dmc.Badge("Integración", color="gray", variant="dark"),
-                                            dbc.Button("4. Puesta en Producción", 
+                                            dbc.Button("4. Producción", 
                                                 outline=True,                                                 
                                                 color="info",
                                                 size="lg",
@@ -414,7 +414,7 @@ def layout():
                                     dmc.Center(
                                         children=[
                                             dmc.Text(
-                                                "Generamos la infraestructura tecnológica necesaria para aplicar las soluciones y modelos creados al trabajo cotidiano de la empresa. El foco está puesto en la robustez y usabilidad.",
+                                                "Generamos la infraestructura tecnológica necesaria para aplicar las soluciones creadas a las tareas cotidianas de la empresa. El foco está puesto en la robustez y usabilidad.",
                                                 size="lg",
                                                 color="dimmed",
                                             )
@@ -446,7 +446,7 @@ def layout():
                                             id="liq5",
                                         ),
                                         dbc.Tooltip(
-                                                "Incoporación de mejoras y desarrollo de herramientas",
+                                                tooltip[5],
                                                 target="liq5",
                                                 placement = "top",
                                         ),
@@ -455,10 +455,10 @@ def layout():
                                             [
                                                 #dmc.Text("Norway Fjord Adventures", weight=500),
                                                 #dmc.Badge("Integración", color="gray", variant="dark"),
-                                                dbc.Button("5.Control y Mejora", 
+                                                dbc.Button("5. Mejora", 
                                                     outline=True, 
                                                     color="info",
-                                                    size="md",
+                                                    size="lg",
                                                     #disabled=True,
                                                 ),
                                                  dmc.Badge(
@@ -475,7 +475,7 @@ def layout():
                                         dmc.Center(
                                             children=[
                                                 dmc.Text(
-                                                    "Controlamos el desempeño de los modelos, verificando su conformidad a los objetivos y política de la empresa, buscando oportunidades de mejorar los resultados.",
+                                                    "Controlamos el desempeño de los modelos, verificando su conformidad a los objetivos de la empresa, buscando oportunidades de mejorar sus resultados.",
                                                     size="lg",
                                                     color="dimmed",
                                                 )
