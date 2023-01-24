@@ -26,6 +26,14 @@ carrusel = [
     {"key": "3", "src": "/assets/im3_3_edited.png"},    
     ]
 
+card_icon = {
+    "color": "white",
+    "textAlign": "center",
+    "fontSize": 30,
+    "margin": "auto",
+}
+
+
 problemas = [
     dbc.CardHeader("Card header"),
     dbc.CardBody(
@@ -98,8 +106,8 @@ def layout():
                                             variant="dark",                                            
                                             #ride="carousel",
                                             style={                                                
-                                                "border-radius": "400px",
-                                                "background-color": "rgba(0,0,0,0)",
+                                                "border-radius": "10px",                                                
+                                                "background-color": "black", #white = "rgba(0,0,0,0)",
                                                 "overflow": "hidden",                                                
                                             }
                                     ),
@@ -114,7 +122,7 @@ def layout():
                             dbc.Col(html.Div(
                                 children=[
                                     dmc.Text(
-                                        "Multiplo es un empresa dedicada a mejorar procesos empresariales aplicando Inteligencia Artificial (IA). De datos caóticos a nuevos productos, brindamos herramientas avanzadas para mejorar los márgenes y la rentabilidad del negocio.",
+                                        "Multiplo es un empresa dedicada a mejorar procesos empresariales aplicando Inteligencia Artificial (IA). De datos caóticos a nuevos productos, brindamos sistemas avanzados para mejorar los márgenes y la rentabilidad del negocio.",
                                         variant="gradient",
                                         gradient={"from": "skyblue", "to": "fuchsia", "deg": 100},
                                         style={"fontSize": 30},
@@ -123,7 +131,7 @@ def layout():
                                     html.Br(),
                                     dmc.Text(
                                         "¿Tenes datos? Multiplo se ocupa del conocimiento.",                                        
-                                        color="gray",
+                                        color="white",
                                         style={"fontSize": 20},                                    
                                     ),
                                     html.Br(),
@@ -131,7 +139,7 @@ def layout():
                                     html.Div(
                                         [
                                             dbc.Button("Conocer nuestras soluciones", outline=True, color="primary", className="me-md-2"),
-                                            dbc.Button("Comunicarse con ventas", outline=True, color="secondary", className="me-md-2"),
+                                            dbc.Button("Comunicarse con ventas", outline=True, color="info", className="me-md-2"),
                                         ],
                                         #className="d-grid gap-2 col-6 mx-auto lg-1",                        
                                     )
@@ -154,9 +162,7 @@ def layout():
                 html.Br(),
                 html.Br(),  
                 html.Br(),  
-                html.Br(),
-                html.Br(),  
-                html.Br(),   
+                html.Br(),                   
                 # ML Title ----
                 html.Div(
                     [
@@ -168,15 +174,15 @@ def layout():
                                     dbc.Col(html.Div(
                                         children=[
                                             dmc.Text(
-                                                "Multiplo te acompaña para incoporar IA en la empresa",
+                                                "Multiplo te acompaña a incoporar IA en tu empresa",
                                                 variant="gradient",
                                                 gradient={"from": "fuchsia", "to": "skyblue", "deg": 100},
                                                 style={"fontSize": 30},
                                             ),
                                             html.Br(),
                                             dmc.Text(
-                                                "En ese proyeto cada etapa es una unidad que genera resultados valiosos para la organización",                                        
-                                                color="gray",
+                                                "en ese proyeto cada etapa es una unidad con resultados valiosos",                                        
+                                                color="white",
                                                 style={"fontSize": 20},
                                             ),
                                         ]),                                        
@@ -202,11 +208,10 @@ def layout():
                             dmc.Card(
                                 children=[
                                     dmc.CardSection(
-                                          gif.GifPlayer(
-                                            gif='assets/liguid4.gif',
-                                            still='assets/liguid4.gif',
-                                            autoplay = True,
-                                            ),
+                                        dmc.Image(
+                                            src= app.get_asset_url("document.png"),                                            
+                                            radius="lg",
+                                        ),
                                         id="liq1",
                                     ),  
                                     dbc.Tooltip(
@@ -224,8 +229,8 @@ def layout():
                                             ),
                                             dbc.Button("1. Acceso a Datos", 
                                                 outline=True, 
-                                                color="light",
-                                                size="md",
+                                                color="info",
+                                                size="md",                                                
                                                 #disabled=True,
                                             ),
                                             #dmc.Text("Acceso a Datos",
@@ -266,11 +271,10 @@ def layout():
                             dmc.Card(
                                 children=[
                                     dmc.CardSection(
-                                          gif.GifPlayer(
-                                            gif='assets/liguid2.gif',
-                                            still='assets/liguid2.gif',
-                                            autoplay = True,
-                                            ),
+                                           dmc.Image(
+                                            src= app.get_asset_url("approval.png"),                                            
+                                            radius="lg",
+                                        ),
                                         id="liq2",
                                     ),
                                     dbc.Tooltip(
@@ -285,7 +289,7 @@ def layout():
                                             #dmc.Badge("Integración", color="gray", variant="dark"),
                                             dbc.Button("2. Ingeniería de Datos", 
                                                 outline=True, 
-                                                color="light",
+                                                color="info",
                                                 size="lg",
                                                 #disabled=True,
                                             ),
@@ -323,11 +327,10 @@ def layout():
                             dmc.Card(
                                 children=[
                                     dmc.CardSection(
-                                          gif.GifPlayer(
-                                            gif='assets/liguid5.gif',
-                                            still='assets/liguid5.gif',
-                                            autoplay = True,
-                                            ),
+                                           dmc.Image(
+                                            src= app.get_asset_url("settings-sliders.png"),                                            
+                                            radius="lg",
+                                        ),
                                         id="liq3",
                                     ),
                                     dbc.Tooltip(
@@ -340,9 +343,9 @@ def layout():
                                         [
                                             #dmc.Text("Norway Fjord Adventures", weight=500),
                                             #dmc.Badge("Integración", color="gray", variant="dark"),
-                                            dbc.Button("3. Generación de Modelos", 
+                                            dbc.Button("3. Generar Modelos", 
                                                 outline=True, 
-                                                color="light",
+                                                color="info",
                                                 size="lg",
                                                 #disabled=True,
                                             ),
@@ -380,15 +383,14 @@ def layout():
                             dmc.Card(
                                 children=[
                                     dmc.CardSection(
-                                          gif.GifPlayer(
-                                            gif='assets/liguid3.gif',
-                                            still='assets/liguid3.gif',
-                                            autoplay = True,                                            
-                                            ),
+                                           dmc.Image(
+                                            src= app.get_asset_url("share.png"),                                            
+                                            radius="lg",
+                                        ),
                                         id="liq4",
                                     ),
                                     dbc.Tooltip(
-                                            "Aplicación Web para consulta, APIs, Reportes, otros",
+                                            "Aplicación Web, APIs, Reportes, otros",
                                             target="liq4",
                                             placement = "top",
                                     ),
@@ -399,7 +401,7 @@ def layout():
                                             #dmc.Badge("Integración", color="gray", variant="dark"),
                                             dbc.Button("4. Puesta en Producción", 
                                                 outline=True,                                                 
-                                                color="light",
+                                                color="info",
                                                 size="lg",
                                                 #disabled=True,
                                             ),
@@ -437,11 +439,10 @@ def layout():
                                 dmc.Card(
                                     children=[
                                         dmc.CardSection(
-                                            gif.GifPlayer(
-                                                gif='assets/liguid1.gif',
-                                                still='assets/liguid1.gif',
-                                                autoplay = True,
-                                                ),
+                                             dmc.Image(
+                                                src= app.get_asset_url("search-analysis.png"),                                            
+                                                radius="lg",
+                                            ),
                                             id="liq5",
                                         ),
                                         dbc.Tooltip(
@@ -456,7 +457,7 @@ def layout():
                                                 #dmc.Badge("Integración", color="gray", variant="dark"),
                                                 dbc.Button("5.Control y Mejora", 
                                                     outline=True, 
-                                                    color="light",
+                                                    color="info",
                                                     size="md",
                                                     #disabled=True,
                                                 ),
