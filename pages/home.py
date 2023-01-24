@@ -343,7 +343,7 @@ def layout():
                                 children=[
                                     dmc.CardSection(
                                            dmc.Image(
-                                            src= app.get_asset_url("settings-sliders.png"),                                            
+                                            src= app.get_asset_url("dashboard.png"),                                            
                                             radius="lg",
                                         ),
                                         id="liq3",
@@ -455,7 +455,7 @@ def layout():
                                     children=[
                                         dmc.CardSection(
                                              dmc.Image(
-                                                src= app.get_asset_url("search-analysis.png"),                                            
+                                                src= app.get_asset_url("setting.png"),                                            
                                                 radius="lg",
                                             ),
                                             id="liq5",
