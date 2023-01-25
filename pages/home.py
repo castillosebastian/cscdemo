@@ -42,6 +42,16 @@ etapasIA = {
     5:"Controlamos el desempeño de los modelos, verificando su conformidad a los objetivos de la empresa, buscando oportunidades de mejorar sus resultados.",
 }
 
+etapasdetailIA = {
+    1: "En esta etapa se recolectan y preparan los datos para su uso en el proyecto de IA, más específicamente en los algoritmos de aprendizaje automático. Se accede a los datos desde diferentes fuentes, se los limpia, se eliminan valores faltantes y se los combina en un único conjunto de datos. Luego se realiza una exploración de los datos para comprender su distribución, relaciones y patrones.",
+    2: "Transformación y creación de datos: En esta etapa se modifican los datos para adaptarlos a las necesidades del modelo de Machine Learning. Se realizan tareas como la normalización, escalado, codificación y generación de características. También se pueden crear nuevos conjuntos de datos a partir de los existentes mediante técnicas como el muestreo, la agregación y el muestreo estratificado.",
+    3: "Programación, entrenamiento y evaluación de modelos: En esta etapa se programa el modelo de Machine Learning y se entrena con los datos preparados en las etapas anteriores. Se evalúa el rendimiento del modelo utilizando técnicas como la validación cruzada y se ajusta si es necesario.",
+    4: "Puesta en producción de modelos de Machine Learning: En esta etapa se implementa el modelo en un entorno de producción y se integra con otras aplicaciones o sistemas. Se realizan pruebas para asegurar que el modelo funciona correctamente y se monitorea su rendimiento en tiempo real.",
+    5: "Monitoreo y mejora de modelos: Una vez que el modelo está en producción, es importante seguir monitoreando su rendimiento y mejorando continuamente. Se pueden recolectar nuevos datos y utilizarlos para reentrenar el modelo, se pueden ajustar los parámetros del modelo, o se pueden probar nuevos modelos para ver si mejoran el rendimiento.",
+}
+
+
+
 problemas = [
     dbc.CardHeader("Card header"),
     dbc.CardBody(
@@ -99,9 +109,6 @@ images = [
   dmc.Image(radius="sm", src='https://images.unsplash.com/photo-1444084316824-dc26d6657664?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=250&q=80'),
 ]
 
-
-size_texto_cuerpo = 20
-
 def layout():
     return [
         html.Div(            
@@ -137,7 +144,7 @@ def layout():
                             dbc.Col(html.Div(
                                 children=[
                                     dmc.Text(
-                                        "Multiplo es un empresa dedicada a mejorar procesos empresariales aplicando Inteligencia Artificial (IA). De datos caóticos a nuevos productos, brindamos sistemas avanzados para mejorar los márgenes y la rentabilidad del negocio.",
+                                        "Multiplo es un empresa dedicada a mejorar procesos empresariales aplicando Inteligencia Artificial o IA. De datos caóticos a nuevos productos, brindamos sistemas avanzados para mejorar los márgenes y la rentabilidad del negocio.",
                                         variant="gradient",
                                         gradient={"from": "skyblue", "to": "fuchsia", "deg": 100},
                                         style={"fontSize": 30},
@@ -145,7 +152,7 @@ def layout():
                                     html.Br(),
                                     html.Br(),
                                     dmc.Text(
-                                        "¿Tenes datos? Multiplo se ocupa del conocimiento.",                                        
+                                        "¿Dispones de datos? Multiplo se ocupa del sistema para generar conocimiento.",                                        
                                         color="white",
                                         style={"fontSize": 20},                                    
                                     ),
@@ -228,35 +235,32 @@ def layout():
                                             radius="lg",
                                         ),
                                         id="liq1",
-                                    ),  
-                                    dbc.Tooltip(
-                                            tooltip[1],
-                                            target="liq1",
-                                            placement = "top",
-                                    ),
-                                    html.Br(),                                  
-                                    dmc.Group(
-                                        [
-                                            dmc.Badge(
-                                                "Inicio", 
-                                                variant="gradient",
-                                                gradient={"from": "grape", "to": "pink", "deg": 35},
-                                            ),
-                                            dbc.Button("1. Acceso", 
-                                                outline=True, 
-                                                color="info",
-                                                size="lg",                                                
-                                                #disabled=True,
-                                            ),                                             
-                                            #dmc.Text("Acceso a Datos",
-                                            #size="lg",
-                                            #color="dimmed",
-                                            #),
-                                        ],
-                                        position="center",
-                                        mt="md",
-                                        mb="xs",
-                                    ),
+                                        ),  
+                                        dbc.Tooltip(
+                                                tooltip[1],
+                                                target="liq1",
+                                                placement = "top",
+                                        ),
+                                        html.Br(),                                  
+                                        dmc.Group(
+                                            [                                                
+                                                dbc.Button("1. Acceso", 
+                                                    outline=True, 
+                                                    color="info",
+                                                    size="md", 
+                                                    href="#acceso", 
+                                                    external_link=True,                                              
+                                                    #disabled=True,
+                                                ),                                                                                                                                   
+                                                #dmc.Text("Acceso a Datos",
+                                                #size="lg",
+                                                #color="dimmed",
+                                                #),
+                                            ],
+                                            position="center",
+                                            mt="md",
+                                            mb="xs",
+                                        ),
                                     html.Br(), 
                                     dmc.Center(
                                         children=[
@@ -305,7 +309,9 @@ def layout():
                                             dbc.Button("2. Transformación", 
                                                 outline=True, 
                                                 color="info",
-                                                size="lg",
+                                                size="md",
+                                                href="#transformacion", 
+                                                external_link=True,      
                                                 #disabled=True,
                                             ),
                                         ],
@@ -361,7 +367,9 @@ def layout():
                                             dbc.Button("3. Generación", 
                                                 outline=True, 
                                                 color="info",
-                                                size="lg",
+                                                size="md",
+                                                href="#generacion", 
+                                                external_link=True,      
                                                 #disabled=True,
                                             ),
                                         ],
@@ -401,14 +409,14 @@ def layout():
                                            dmc.Image(
                                             src= app.get_asset_url("share.png"),                                            
                                             radius="lg",
+                                            ),
+                                            id="liq4",
                                         ),
-                                        id="liq4",
-                                    ),
-                                    dbc.Tooltip(
-                                            tooltip[4],
-                                            target="liq4",
-                                            placement = "top",
-                                    ),
+                                        dbc.Tooltip(
+                                                tooltip[4],
+                                                target="liq4",
+                                                placement = "top",
+                                        ),
                                     html.Br(),
                                     dmc.Group(
                                         [
@@ -417,7 +425,9 @@ def layout():
                                             dbc.Button("4. Producción", 
                                                 outline=True,                                                 
                                                 color="info",
-                                                size="lg",
+                                                size="md",
+                                                href="#produccion", 
+                                                external_link=True,      
                                                 #disabled=True,
                                             ),
                                         ],
@@ -467,19 +477,14 @@ def layout():
                                         ),
                                         html.Br(),
                                         dmc.Group(
-                                            [
-                                                #dmc.Text("Norway Fjord Adventures", weight=500),
-                                                #dmc.Badge("Integración", color="gray", variant="dark"),
+                                            [                                                
                                                 dbc.Button("5. Mejora", 
                                                     outline=True, 
                                                     color="info",
-                                                    size="lg",
+                                                    size="md", 
+                                                    href="#produccion", 
+                                                    external_link=True,   
                                                     #disabled=True,
-                                                ),
-                                                 dmc.Badge(
-                                                    "Fin", 
-                                                    variant="gradient",
-                                                    gradient={"from": "grape", "to": "pink", "deg": 35},
                                                 ),
                                             ],
                                             position="center",
@@ -523,13 +528,26 @@ def layout():
                         [                                 
                             dbc.Row(
                                 children=[                                    
-                                    dbc.Col(html.Div(                                        
+                                    dbc.Col(
+                                        html.Div(
+                                            children=[
+                                                html.Div(
+                                                     dmc.Badge(
+                                                        "1. Acceso",
+                                                        variant="gradient",
+                                                        gradient={"from": "grape", "to": "pink", "deg": 35},
+                                                        id="acceso", 
+                                                        size="xl",
+                                                    ),                                                   
+                                                ),                                                 
+                                                html.Br(),
                                                 dmc.Text(
-                                                "Multiplo es un empresa dedicada a mejorar procesos empresariales aplicando Inteligencia Artificial (IA). De datos caóticos a nuevos productos, brindamos sistemas avanzados para mejorar los márgenes y la rentabilidad del negocio.",
-                                                variant="gradient",
-                                                gradient={"from": "skyblue", "to": "fuchsia", "deg": 100},
-                                                style={"fontSize": 30},
-                                            ),                                       
+                                                    etapasdetailIA[1],                                                
+                                                    variant="gradient",
+                                                    gradient={"from": "skyblue", "to": "fuchsia", "deg": 100},
+                                                    style={"fontSize": 20},
+                                                ),                                                 
+                                            ],                                                                                    
                                         ),
                                         width=4,
                                         align = "center",
@@ -541,7 +559,7 @@ def layout():
                                                     dmc.CardSection(
                                                         dmc.Group(
                                                             children=[
-                                                                dmc.Text("Review Pictures", weight=500),                                                                
+                                                                dmc.Text("Integración y consolidación de datos", weight=500),                                                                
                                                             ],
                                                             position="apart",
                                                         ),
@@ -568,19 +586,12 @@ def layout():
                                                             mt="sm",
                                                         ),
                                                     ),
-                                                    dmc.CardSection(
-                                                        children=[
-                                                            dmc.SimpleGrid(cols=3, children=[i for i in images]),
-                                                        ],
-                                                        inheritPadding=True,
-                                                        mt="sm",
-                                                        pb="md",
-                                                    ),
+                                                    
                                                 ],
                                                 withBorder=True,
                                                 shadow="sm",
-                                                radius="md",
-                                                style={"width": 350},
+                                                radius="lg",
+                                                #style={"width": 1000},
                                             ),
                                         width=8,
                                     ),
@@ -590,20 +601,27 @@ def layout():
                             html.Br(),
                             html.Br(), 
                             dbc.Row(
-                                children=[                                    
-                                    dbc.Col(html.Div(
-                                        dcc.Markdown('''
-                                            >
-                                            > 
-                                            > Multiplo es un empresa dedicada a mejorar procesos
-                                            > aplicando *Inteligencia Artificial* en tareas humanas.
-                                            > [(ver)](/multiplo)
-                                            >                                    
-                                            '''
-                                        ),                                
-                                        style = {
-                                            "font-size": 20,
-                                        },
+                                children=[ 
+                                    dbc.Col(
+                                        html.Div(
+                                            children=[
+                                                html.Div(
+                                                     dmc.Badge(
+                                                        "2. Transformación",
+                                                        variant="gradient",
+                                                        gradient={"from": "grape", "to": "pink", "deg": 35},
+                                                        id="transformacion", 
+                                                        size="xl",
+                                                    ),                                                   
+                                                ),                                                 
+                                                html.Br(),
+                                                dmc.Text(
+                                                    etapasdetailIA[1],                                                
+                                                    variant="gradient",
+                                                    gradient={"from": "skyblue", "to": "fuchsia", "deg": 100},
+                                                    style={"fontSize": 20},
+                                                ),                                                 
+                                            ],                                                                                    
                                         ),
                                         width=4,
                                         align = "center",
@@ -624,20 +642,27 @@ def layout():
                             html.Br(),
                             html.Br(),
                             dbc.Row(
-                                children=[                                    
-                                    dbc.Col(html.Div(
-                                        dcc.Markdown('''
-                                            >
-                                            > 
-                                            > Multiplo es un empresa dedicada a mejorar procesos
-                                            > aplicando *Inteligencia Artificial* en tareas humanas.
-                                            > [(ver)](/multiplo)
-                                            >                                    
-                                            '''
-                                        ),                                
-                                        style = {
-                                            "font-size": 20,
-                                        },
+                                 children=[ 
+                                    dbc.Col(
+                                        html.Div(
+                                            children=[
+                                                html.Div(
+                                                     dmc.Badge(
+                                                        "3. Generación",
+                                                        variant="gradient",
+                                                        gradient={"from": "grape", "to": "pink", "deg": 35},
+                                                        id="generacion", 
+                                                        size="xl",
+                                                    ),                                                   
+                                                ),                                                 
+                                                html.Br(),
+                                                dmc.Text(
+                                                    etapasdetailIA[3],                                                
+                                                    variant="gradient",
+                                                    gradient={"from": "skyblue", "to": "fuchsia", "deg": 100},
+                                                    style={"fontSize": 20},
+                                                ),                                                 
+                                            ],                                                                                    
                                         ),
                                         width=4,
                                         align = "center",
@@ -658,20 +683,27 @@ def layout():
                             html.Br(),
                             html.Br(), 
                             dbc.Row(
-                                children=[                                    
-                                    dbc.Col(html.Div(
-                                        dcc.Markdown('''
-                                            >
-                                            > 
-                                            > Multiplo es un empresa dedicada a mejorar procesos
-                                            > aplicando *Inteligencia Artificial* en tareas humanas.
-                                            > [(ver)](/multiplo)
-                                            >                                    
-                                            '''
-                                        ),                                
-                                        style = {
-                                            "font-size": 20,
-                                        },
+                              children=[ 
+                                    dbc.Col(
+                                        html.Div(
+                                            children=[
+                                                html.Div(
+                                                     dmc.Badge(
+                                                        "4. Producción",
+                                                        variant="gradient",
+                                                        gradient={"from": "grape", "to": "pink", "deg": 35},
+                                                        id="produccion", 
+                                                        size="xl",
+                                                    ),                                                   
+                                                ),                                                 
+                                                html.Br(),
+                                                dmc.Text(
+                                                    etapasdetailIA[4],                                                
+                                                    variant="gradient",
+                                                    gradient={"from": "skyblue", "to": "fuchsia", "deg": 100},
+                                                    style={"fontSize": 20},
+                                                ),                                                 
+                                            ],                                                                                    
                                         ),
                                         width=4,
                                         align = "center",
@@ -684,7 +716,7 @@ def layout():
                                         #outline=True,
                                         className="border-0 bg-transparent",
                                         ),
-                                         width=8,
+                                        width=8,
                                     ),
                                 ]
                             ),    
@@ -692,21 +724,28 @@ def layout():
                             html.Br(),
                             html.Br(),
                             dbc.Row(
-                                children=[                                    
-                                    dbc.Col(html.Div(
-                                        dcc.Markdown('''
-                                            >
-                                            > 
-                                            > Multiplo es un empresa dedicada a mejorar procesos
-                                            > aplicando *Inteligencia Artificial* en tareas humanas.
-                                            > [(ver)](/multiplo)
-                                            >                                    
-                                            '''
-                                        ),                                
-                                        style = {
-                                            "font-size": 20,
-                                        },
-                                        ),
+                                children=[ 
+                                    dbc.Col(
+                                        html.Div(
+                                            children=[
+                                                html.Div(
+                                                    dmc.Badge(
+                                                        "5. Mejora",
+                                                        variant="gradient",
+                                                        gradient={"from": "grape", "to": "pink", "deg": 35},
+                                                        id="mejora", 
+                                                        size="xl",
+                                                        ),                                                   
+                                                    ),                                                 
+                                                    html.Br(),
+                                                    dmc.Text(
+                                                        etapasdetailIA[5],                                                
+                                                        variant="gradient",
+                                                        gradient={"from": "skyblue", "to": "fuchsia", "deg": 100},
+                                                        style={"fontSize": 20},
+                                                    ),                                                 
+                                                ],                                                                                    
+                                            ),
                                         width=4,
                                         align = "center",
                                         style={'text-align': 'right'},
@@ -718,7 +757,7 @@ def layout():
                                         #outline=True,
                                         className="border-0 bg-transparent",
                                         ),
-                                         width=8,
+                                        width=8,
                                     ),
                                 ]
                             ),    
