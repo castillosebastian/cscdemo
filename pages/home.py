@@ -50,6 +50,19 @@ etapasdetailIA = {
     5: "Finalmente, en esta última etapa se monitorea el rendimiento del sistema y analizan oportunidades de mejorando. Frecuentemente, se incorporan nuevos datos, se revisan y reentrenan modelos.",
 }
 
+etapasdetailIA_header_graph = {
+    "result1":"Resultados: vías de transferencia datos, información integrada y consolidada",
+    "detail1":"Se crea un modelo de datos integrados y sistemático, permitiendo análisis multidimensionales de la organización con alcance a la información recolectada.",
+    "result2":"Resultados: nuevos datos, patrones y proyecciones",
+    "detail2":"Surge una nueva comprensión de la realidad organizacional y del entorno de la empresa que permite acciones inmediatas.",
+    "result3":"Resultados: modelos de resolución del problema atacado",
+    "detail3":"La información que proveen los modelos no solo ofrecen una respuesta al problema atacado, permiten además proyectar al resto de la organización (ej.Logística, Operaciones, Contabilidad, etc.) cambios y mejoras",
+    "result4":"algo",
+    "detail4":"algo",
+    "result5":"algo",
+    "detail5":"algo",  
+}
+
 
 
 problemas = [
@@ -85,12 +98,6 @@ creditos = [
 pie = [
     dbc.Col(html.Div("Paraná, Entre Ríos Argentina."), width=2),
     dbc.Col(html.Div("multiplo@algunmail.com"), width=2),
-]
-
-images = [
-  dmc.Image(radius="sm", src= app.get_asset_url("csv_file.png")),
-  dmc.Image(radius="sm", src='https://images.unsplash.com/photo-1444723121867-7a241cacace9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=250&q=80'),
-  dmc.Image(radius="sm", src='https://images.unsplash.com/photo-1444084316824-dc26d6657664?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=250&q=80'),
 ]
 
 def layout():
@@ -534,16 +541,21 @@ def layout():
                                             ],                                                                                    
                                         ),
                                         width=4,
-                                        align = "center",
+                                        align = "top",
                                         style={'text-align': 'right'},
                                     ),
                                     dbc.Col(
                                         dmc.Card(
                                                 children=[
-                                                    dmc.CardSection(
+                                                     dmc.CardSection(
                                                         dmc.Group(
                                                             children=[
-                                                                dmc.Text("Integración y consolidación de datos", weight=500),                                                                
+                                                                dmc.Text(etapasdetailIA_header_graph["result1"], 
+                                                                    weight=500,
+                                                                    variant="gradient",
+                                                                    gradient={"from": "blue", "to": "fuchsia", "deg": 100},
+                                                                    style={"fontSize": 20},
+                                                                ),                                                                
                                                             ],
                                                             position="apart",
                                                         ),
@@ -554,11 +566,8 @@ def layout():
                                                     dmc.Text(
                                                         children=[
                                                             dmc.Text(
-                                                                "200+ images uploaded",
-                                                                color="blue",
-                                                                style={"display": "inline"},
-                                                            ),
-                                                            " since last visit, review them to select which one should be added to your gallery",
+                                                                etapasdetailIA_header_graph["detail1"],
+                                                            )
                                                         ],
                                                         mt="sm",
                                                         color="dimmed",
@@ -574,8 +583,7 @@ def layout():
                                                 ],
                                                 withBorder=True,
                                                 shadow="sm",
-                                                radius="lg",
-                                                #style={"width": 1000},
+                                                radius="lg",                                                
                                             ),
                                         width=8,
                                     ),
@@ -608,16 +616,49 @@ def layout():
                                             ],                                                                                    
                                         ),
                                         width=4,
-                                        align = "center",
+                                        align = "top",
                                         style={'text-align': 'right'},
                                     ),
                                     dbc.Col(
-                                        dbc.Card(
-                                        problemas, 
-                                        #color="info",  
-                                        #outline=True,
-                                        className="border-0 bg-transparent",
-                                        ),
+                                        dmc.Card(
+                                                children=[
+                                                    dmc.CardSection(
+                                                        dmc.Group(
+                                                            children=[
+                                                                dmc.Text(etapasdetailIA_header_graph["result2"], 
+                                                                    weight=500,
+                                                                    variant="gradient",
+                                                                    gradient={"from": "blue", "to": "fuchsia", "deg": 100},
+                                                                    style={"fontSize": 20},
+                                                                ),                                                                
+                                                            ],
+                                                            position="apart",
+                                                        ),
+                                                        withBorder=True,
+                                                        inheritPadding=True,
+                                                        py="xs",
+                                                    ),
+                                                    dmc.Text(
+                                                        children=[
+                                                            dmc.Text(etapasdetailIA_header_graph["detail2"],
+                                                            )
+                                                        ],
+                                                        mt="sm",
+                                                        color="dimmed",
+                                                        size="sm",
+                                                    ),
+                                                    dmc.CardSection(
+                                                        dmc.Image(
+                                                            src=app.get_asset_url("data_engineering.png"),
+                                                            mt="sm",
+                                                        ),
+                                                    ),                                                    
+                                                ],
+                                                withBorder=True,
+                                                shadow="sm",
+                                                radius="lg",
+                                                #style={"width": 1000},
+                                            ),
                                         width=8,
                                     ),
                                 ]
@@ -626,7 +667,7 @@ def layout():
                             html.Br(),
                             html.Br(),
                             dbc.Row(
-                                 children=[ 
+                                 children=[
                                     dbc.Col(
                                         html.Div(
                                             children=[
@@ -649,16 +690,49 @@ def layout():
                                             ],                                                                                    
                                         ),
                                         width=4,
-                                        align = "center",
+                                        align = "top",
                                         style={'text-align': 'right'},
                                     ),
                                     dbc.Col(
-                                        dbc.Card(
-                                        problemas, 
-                                        #color="info",  
-                                        #outline=True,
-                                        className="border-0 bg-transparent",
-                                        ),
+                                        dmc.Card(
+                                                children=[
+                                                    dmc.CardSection(
+                                                        dmc.Group(
+                                                            children=[
+                                                                dmc.Text(etapasdetailIA_header_graph["result3"], 
+                                                                    weight=500,
+                                                                    variant="gradient",
+                                                                    gradient={"from": "blue", "to": "fuchsia", "deg": 100},
+                                                                    style={"fontSize": 20},
+                                                                ),                                                                
+                                                            ],
+                                                            position="apart",
+                                                        ),
+                                                        withBorder=True,
+                                                        inheritPadding=True,
+                                                        py="xs",
+                                                    ),
+                                                    dmc.Text(
+                                                        children=[
+                                                            dmc.Text(etapasdetailIA_header_graph["detail3"],
+                                                            )
+                                                        ],
+                                                        mt="sm",
+                                                        color="dimmed",
+                                                        size="sm",
+                                                    ),
+                                                    dmc.CardSection(
+                                                        dmc.Image(
+                                                            src=app.get_asset_url("generacion.png"),
+                                                            mt="sm",
+                                                        ),
+                                                    ),                                                    
+                                                ],
+                                                withBorder=True,
+                                                shadow="sm",
+                                                radius="lg",
+                                                #style={"width": 1000},
+                                            ),
                                         width=8,
                                     ),
                                 ]
@@ -690,7 +764,7 @@ def layout():
                                             ],                                                                                    
                                         ),
                                         width=4,
-                                        align = "center",
+                                        align = "top",
                                         style={'text-align': 'right'},
                                     ),
                                     dbc.Col(
@@ -731,7 +805,7 @@ def layout():
                                                 ],                                                                                    
                                             ),
                                         width=4,
-                                        align = "center",
+                                        align = "top",
                                         style={'text-align': 'right'},
                                     ),
                                     dbc.Col(
