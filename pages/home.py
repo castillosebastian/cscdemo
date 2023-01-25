@@ -43,11 +43,11 @@ etapasIA = {
 }
 
 etapasdetailIA = {
-    1: "En esta etapa se recolectan y preparan los datos para su uso en el proyecto de IA, más específicamente en los algoritmos de aprendizaje automático. Se accede a los datos desde diferentes fuentes, se los limpia, se eliminan valores faltantes y se los combina en un único conjunto de datos. Luego se realiza una exploración de los datos para comprender su distribución, relaciones y patrones.",
-    2: "Transformación y creación de datos: En esta etapa se modifican los datos para adaptarlos a las necesidades del modelo de Machine Learning. Se realizan tareas como la normalización, escalado, codificación y generación de características. También se pueden crear nuevos conjuntos de datos a partir de los existentes mediante técnicas como el muestreo, la agregación y el muestreo estratificado.",
-    3: "Programación, entrenamiento y evaluación de modelos: En esta etapa se programa el modelo de Machine Learning y se entrena con los datos preparados en las etapas anteriores. Se evalúa el rendimiento del modelo utilizando técnicas como la validación cruzada y se ajusta si es necesario.",
-    4: "Puesta en producción de modelos de Machine Learning: En esta etapa se implementa el modelo en un entorno de producción y se integra con otras aplicaciones o sistemas. Se realizan pruebas para asegurar que el modelo funciona correctamente y se monitorea su rendimiento en tiempo real.",
-    5: "Monitoreo y mejora de modelos: Una vez que el modelo está en producción, es importante seguir monitoreando su rendimiento y mejorando continuamente. Se pueden recolectar nuevos datos y utilizarlos para reentrenar el modelo, se pueden ajustar los parámetros del modelo, o se pueden probar nuevos modelos para ver si mejoran el rendimiento.",
+    1: "Al inicio, luego de las definiciones de la empresa sobre objetivos y alcance del proyeto, se recolectan y preparan los datos para analizarlos. Se accede regularmente a diferentes fuentes, se procesa y combina la información almacenada para integrarla en un conjunto sistemático y coherente. Usualmente aquí empezamos a ver grandes volúmenes de información (Big Data). Luego se realiza una exploración de los datos para comprender su estado y características, anomalías, faltantes e inconsistencias.",
+    2: "En esta segunda etapa se generan transformaciones en los datos para adaptarlos al problema que se busca resolver y 'potenciar' la porción de información que es más útil para eso. Se realizan tareas como normalización, escalado, codificación y generación de características. También se crean nuevos conjuntos de datos que codifican información relevante para las etapas siguientes.",
+    3: "En esta tercera etapa se crean y 'entrenan' los modelos más apropiados para el problema empleando los datos preparados en las etapas anteriores. Se evalúan los resultados de los diferentes experimentos, y se itera sobre aquellos que presentan mayor proyección. Por último se diseña la solución definitiva para las necesidades de la empresa, asegurándonos que el modelo funciona correctamente ",
+    4: "En esta cuarta etapa se implementa el modelo en un entorno de producción y se integra con otras aplicaciones o sistemas.",
+    5: "Finalmente, en esta última etapa se monitorea el rendimiento del sistema y analizan oportunidades de mejorando. Frecuentemente, se incorporan nuevos datos, se revisan y reentrenan modelos.",
 }
 
 
@@ -59,23 +59,7 @@ problemas = [
             #html.H5("Card title", className="card-title"),
             html.P(
                 dcc.Markdown('''
-                Multiplo es un empresa dedicada a mejorar procesos
-                aplicando *Inteligencia Artificial* en tareas humanas.
-                Multiplo es un empresa dedicada a mejorar procesos
-                aplicando *Inteligencia Artificial* en tareas humanas.
-                Multiplo es un empresa dedicada a mejorar procesos
-                aplicando *Inteligencia Artificial* en tareas humanas.
-                Multiplo es un empresa dedicada a mejorar procesos
-                aplicando *Inteligencia Artificial* en tareas humanas.
-                Multiplo es un empresa dedicada a mejorar procesos
-                aplicando *Inteligencia Artificial* en tareas humanas.
-                Multiplo es un empresa dedicada a mejorar procesos
-                aplicando *Inteligencia Artificial* en tareas humanas.
-                Multiplo es un empresa dedicada a mejorar procesos
-                aplicando *Inteligencia Artificial* en tareas humanas.
-                Multiplo es un empresa dedicada a mejorar procesos
-                aplicando *Inteligencia Artificial* en tareas humanas.
-                [(ver)](/multiplo)                                                  
+                Multiplo es un empresa dedicada a mejorar procesos                                                            
                 '''
                 ),       
             ),
@@ -616,7 +600,7 @@ def layout():
                                                 ),                                                 
                                                 html.Br(),
                                                 dmc.Text(
-                                                    etapasdetailIA[1],                                                
+                                                    etapasdetailIA[2],                                                
                                                     variant="gradient",
                                                     gradient={"from": "skyblue", "to": "fuchsia", "deg": 100},
                                                     style={"fontSize": 20},
