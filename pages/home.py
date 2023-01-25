@@ -55,12 +55,12 @@ etapasdetailIA_header_graph = {
     "detail1":"Se crea un modelo de datos integrados y sistemático, permitiendo análisis multidimensionales de la organización con alcance a la información recolectada.",
     "result2":"Resultados: nuevos datos, patrones y proyecciones",
     "detail2":"Surge una nueva comprensión de la realidad organizacional y del entorno de la empresa que permite acciones inmediatas.",
-    "result3":"Resultados: modelos de resolución del problema atacado",
-    "detail3":"La información que proveen los modelos no solo ofrecen una respuesta al problema atacado, permiten además proyectar al resto de la organización (ej.Logística, Operaciones, Contabilidad, etc.) cambios y mejoras",
-    "result4":"algo",
-    "detail4":"algo",
-    "result5":"algo",
-    "detail5":"algo",  
+    "result3":"Resultados: modelos inteligentes que atacan el problema abordado",
+    "detail3":"La información que proveen los modelos no solo ofrece una respuesta a los problemas abordados por el proyecto, permiten además extender al resto de la organización (ej.Logística, Operaciones, Contabilidad, etc.) cambios y mejoras.",
+    "result4":"Resultados: aplicaciones y herramientas basadas en los modelos creados",
+    "detail4":"Se construyen los dispositivos de consulta y herramientas de trabajo que implementan la solución elaborada en la etapa anterior.",
+    "result5":"Resultados: actualización y desarrollo de la solución",
+    "detail5":"La experiencia en la implementación de la herramiento y los nuevos datos son reintroducidos periódicamente en la solución diseñada fortaleciendo su desempeño.",  
 }
 
 
@@ -585,7 +585,7 @@ def layout():
                                                 shadow="sm",
                                                 radius="lg",                                                
                                             ),
-                                        width=8,
+                                        width={"size": 6, "offset": 1},                                        
                                     ),
                                 ]
                             ),    
@@ -659,7 +659,7 @@ def layout():
                                                 radius="lg",
                                                 #style={"width": 1000},
                                             ),
-                                        width=8,
+                                         width={"size": 6, "offset": 1}
                                     ),
                                 ]
                             ),    
@@ -733,7 +733,7 @@ def layout():
                                                 radius="lg",
                                                 #style={"width": 1000},
                                             ),
-                                        width=8,
+                                         width={"size": 6, "offset": 1}
                                     ),
                                 ]
                             ),    
@@ -768,13 +768,46 @@ def layout():
                                         style={'text-align': 'right'},
                                     ),
                                     dbc.Col(
-                                        dbc.Card(
-                                        problemas, 
-                                        #color="info",  
-                                        #outline=True,
-                                        className="border-0 bg-transparent",
-                                        ),
-                                        width=8,
+                                        dmc.Card(
+                                                children=[
+                                                    dmc.CardSection(
+                                                        dmc.Group(
+                                                            children=[
+                                                                dmc.Text(etapasdetailIA_header_graph["result4"], 
+                                                                    weight=500,
+                                                                    variant="gradient",
+                                                                    gradient={"from": "blue", "to": "fuchsia", "deg": 100},
+                                                                    style={"fontSize": 20},
+                                                                ),                                                                
+                                                            ],
+                                                            position="apart",
+                                                        ),
+                                                        withBorder=True,
+                                                        inheritPadding=True,
+                                                        py="xs",
+                                                    ),
+                                                    dmc.Text(
+                                                        children=[
+                                                            dmc.Text(etapasdetailIA_header_graph["detail4"],
+                                                            )
+                                                        ],
+                                                        mt="sm",
+                                                        color="dimmed",
+                                                        size="sm",
+                                                    ),
+                                                    dmc.CardSection(
+                                                        dmc.Image(
+                                                            src=app.get_asset_url("produccion.jpg"),
+                                                            mt="sm",
+                                                        ),
+                                                    ),                                                    
+                                                ],
+                                                withBorder=True,
+                                                shadow="sm",
+                                                radius="lg",
+                                                #style={"width": 1000},
+                                            ),
+                                         width={"size": 6, "offset": 1}
                                     ),
                                 ]
                             ),    
@@ -809,13 +842,46 @@ def layout():
                                         style={'text-align': 'right'},
                                     ),
                                     dbc.Col(
-                                        dbc.Card(
-                                        problemas, 
-                                        #color="info",  
-                                        #outline=True,
-                                        className="border-0 bg-transparent",
-                                        ),
-                                        width=8,
+                                        dmc.Card(
+                                                children=[
+                                                    dmc.CardSection(
+                                                        dmc.Group(
+                                                            children=[
+                                                                dmc.Text(etapasdetailIA_header_graph["result5"], 
+                                                                    weight=500,
+                                                                    variant="gradient",
+                                                                    gradient={"from": "blue", "to": "fuchsia", "deg": 100},
+                                                                    style={"fontSize": 20},
+                                                                ),                                                                
+                                                            ],
+                                                            position="apart",
+                                                        ),
+                                                        withBorder=True,
+                                                        inheritPadding=True,
+                                                        py="xs",
+                                                    ),
+                                                    dmc.Text(
+                                                        children=[
+                                                            dmc.Text(etapasdetailIA_header_graph["detail5"],
+                                                            )
+                                                        ],
+                                                        mt="sm",
+                                                        color="dimmed",
+                                                        size="sm",
+                                                    ),
+                                                    dmc.CardSection(
+                                                        dmc.Image(
+                                                            src=app.get_asset_url("mejora.jpg"),
+                                                            mt="sm",
+                                                        ),
+                                                    ),                                                    
+                                                ],
+                                                withBorder=True,
+                                                shadow="sm",
+                                                radius="lg",
+                                                #style={"width": 1000},
+                                            ),
+                                         width={"size": 6, "offset": 1}
                                     ),
                                 ]
                             ),    

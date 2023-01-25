@@ -5,4 +5,7 @@ from . import home
 from . import seasons
 from . import circuits
 from . import multiplo
+from . import tableros_analiticos
+from . import tableros_inteligentes
+from . import soluciones
 

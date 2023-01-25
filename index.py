@@ -11,6 +11,8 @@ from app import app
 import pages
 from dash_bootstrap_templates import load_figure_template
 load_figure_template("vapor")
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
 
 CONTENT_STYLE = {
     "margin-left": "5rem",
@@ -35,6 +37,34 @@ dropdown = dbc.DropdownMenu(
     label="Menu",
 )
 
+productos = dbc.DropdownMenu(
+    children=[
+        dbc.DropdownMenuItem(
+            dbc.NavItem(dbc.NavLink("Tableros Analíticos", href=app.get_relative_path("/tableros_analiticos"))),
+        ),
+        dbc.DropdownMenuItem(
+            dbc.NavItem(dbc.NavLink("Tableros Inteligentes", href=app.get_relative_path("/tableros_inteligentes"))),
+        ),        
+    ],
+    nav=True,
+    in_navbar=True,
+    label="Productos",
+)
+
+soluciones = dbc.DropdownMenu(
+    children=[
+        dbc.DropdownMenuItem(
+            dbc.NavItem(dbc.NavLink("Genéricas", href=app.get_relative_path("/soluciones"))),
+        ),       
+        dbc.DropdownMenuItem(divider=True),        
+    ],
+    nav=True,
+    in_navbar=True,
+    label="Soluciones",
+)
+
+#className="fa fa-fw fa-home"
+
 navbar = dbc.Navbar(
     dbc.Container(
         [
@@ -42,35 +72,56 @@ navbar = dbc.Navbar(
                 # Use row and col to control vertical alignment of logo / brand
                 dbc.Row(
                     [
-                        dbc.Col(html.Img(src=LOGO, height="80px")),
+                        #dbc.Col(html.Img(src=LOGO, height="80px")),
                         dbc.Col(dbc.NavbarBrand(
-                            "multiplo", 
+                            "yflow", 
                             className="ms-2",
-                            style={"font-size": "40px"},
-                            )),
+                            style={"font-size": "50px"},
+                        )),
                     ],
                     align="center",
                     className="g-0",
                 ),
-                href=app.get_relative_path("/multiplo"),
+                #href=app.get_relative_path("/multiplo"),
                 style={"textDecoration": "none"},
+            ), 
+            dbc.Button(DashIconify(icon="material-symbols:home"), 
+                outline=True,                
+                color= "info",
+                size= "lg", 
+                href= app.get_relative_path("/"), 
+                external_link=True,  
+                style={"border": "none"},                                                         
+                #disabled=True,
             ),
-            dbc.Row(
+            dbc.NavItem(
+                dbc.Nav(
+                    [
+                        productos
+                    ], 
+                    className="ms-auto", 
+                    navbar=True),  
+            ),  
+            dbc.NavItem(
+                dbc.Nav(
+                    [
+                        soluciones
+                    ], 
+                    className="ms-auto", 
+                    navbar=True),  
+            ),                
+            dbc.NavItem(
+                dbc.NavLink(
+                    "Quienes somos", 
+                    href=app.get_relative_path("/multiplo" )
+                ),
+                className="me-auto",
+            ),
+            dbc.Row(                
                 [
-                    dbc.NavbarToggler(id="navbar-toggler"),
                     dbc.Collapse(
                         dbc.Nav(
-                            [
-                                dbc.NavItem(dbc.NavLink("Inicio", href=app.get_relative_path("/"))),
-                                dbc.NavItem(dbc.NavLink("Seasons", href=app.get_relative_path("/seasons"))),
-                                dbc.NavItem(dbc.NavLink("Constructors", href=app.get_relative_path("/constructors"))),
-                                dbc.NavItem(dbc.NavLink("Circuits", href=app.get_relative_path("/circuits"))),
-                                dbc.NavItem(
-                                    dbc.NavLink("Circuits", href=app.get_relative_path("/circuits")),
-                                    # add an auto margin after page to
-                                    # push later links to end of nav
-                                    className="me-auto",
-                                ),
+                            [  
                                 dbc.Collapse(
                                     dbc.Nav(
                                         [
@@ -102,6 +153,7 @@ navbar = dbc.Navbar(
     ),
     dark=True,
     color="dark",
+     style={"border": "none"},
     #style=CONTENT_STYLE,
 )
 
@@ -127,14 +179,12 @@ def display_page_content(pathname):
         return pages.home.layout()
     elif path == "multiplo":
         return pages.multiplo.layout()
-    elif path == "seasons":
-        return pages.seasons.layout()
-    elif path == "circuits":
-        return pages.circuits.layout()
-    elif path == "drivers":
-        return pages.drivers.layout()
-    elif path == "constructors":
-        return pages.constructors.layout()
+    elif path == "soluciones":
+        return pages.soluciones.layout()    
+    elif path == "tableros_analiticos":
+        return pages.tableros_analiticos.layout()
+    elif path == "tableros_inteligentes":
+        return pages.tableros_inteligentes.layout()
     else:
         return "404"
 
